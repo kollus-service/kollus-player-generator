@@ -5,3 +5,6 @@
 
 ### \* v/g란?
 - Video Gateway 의 줄임말이다.
+
+## Reference
+- [https://se-sample1.kollus.com/player_check.php](https://se-sample1.kollus.com/player_check.php)

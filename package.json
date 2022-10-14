@@ -25,7 +25,8 @@
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "zustand": "^4.1.2"
   },
   "devDependencies": {
     "eslint": "latest",
