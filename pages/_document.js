@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script'
-import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+import * as React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
+import createEmotionServer from "@emotion/server/create-instance";
+import theme from "../src/theme";
+import createEmotionCache from "../src/createEmotionCache";
 
 export default class MyDocument extends Document {
   render() {
@@ -17,9 +17,64 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <Script src="https://file.kollus.com/vgcontroller/vg-controller-client.latest.min.js" strategy="lazyOnload"/>
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
+          <Script
+            src="https://file.kollus.com/vgcontroller/vg-controller-client.latest.min.js"
+            strategy="afterInteractive"
+          />
+          <Script
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+              const config = [{
+                'initDataTypes': ['cenc'],
+                'audioCapabilities': [{
+                'contentType': 'audio/mp4;codecs="mp4a.40.2"'
+                }],
+                'videoCapabilities': [{
+                'contentType': 'video/mp4;codecs="avc1.42E01E"'
+                }]
+              }];
+
+              const videoElement = document.createElement('video');
+
+              try {
+                navigator.requestMediaKeySystemAccess('com.widevine.alpha', config).then(function(mediaKeySystemAccess) {
+                  localStorage.setItem('player_multidrm', 'Widevine Supported');
+                }).catch(function(e) {
+                });
+              } catch (e) {
+              }
+
+              try {
+                navigator.requestMediaKeySystemAccess('com.microsoft.playready', config).then(function(mediaKeySystemAccess) {
+                  localStorage.setItem('player_multidrm', 'PlayReady Supported');
+                }).catch(function(e) {
+                });
+              } catch (e) {
+              }
+
+              try {
+                videoElement.webkitSetMediaKeys(new window.WebKitMediaKeys('com.apple.fps.1_0'));
+                localStorage.setItem('player_multidrm', 'Fairplay Supported');
+              } catch (e) {
+              }
+
+              if (localStorage.getItem('player_multidrm')) {
+                localStorage.setItem('player_multidrm', 'MultiDrm Not Supported');
+              }
+
+              try{
+                const playType = videoElement.canPlayType('video/mp4');
+                if(playType!='') {
+                  localStorage.setItem('player_supported', 'mp4 video support');
+                }
+              } catch (e){
+                localStorage.setItem('player_supported', 'mp4 video not supported this browser');
+              }`,
+            }}
+          />
         </Head>
         <body>
           <Main />
@@ -31,7 +86,7 @@ export default class MyDocument extends Document {
 }
 
 // `getInitialProps` belongs to `_document` (instead of `_app`),
-// it's compatible with static-site generation (SSG).
+// it"s compatible with static-site generation (SSG).
 MyDocument.getInitialProps = async (ctx) => {
   // Resolution order
   //
@@ -76,7 +131,7 @@ MyDocument.getInitialProps = async (ctx) => {
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      data-emotion={`${style.key} ${style.ids.join(" ")}`}
       key={style.key}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}

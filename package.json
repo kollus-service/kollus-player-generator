@@ -22,6 +22,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "jsonwebtoken": "^8.5.1",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",

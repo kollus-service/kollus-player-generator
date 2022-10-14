@@ -1,24 +1,21 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import ProTip from '../src/ProTip';
-import Link from '../src/Link';
-import Copyright from '../src/Copyright';
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Container from "@mui/material/Container";
+import Copyright from "../src/component/Copyright";
+import PlayerView from "../src/component/Player/PlayerView";
+import PlayerInfo from "../src/component/Player/PlayerInfo";
 
 export default function Index() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
+    <Container maxWidth="lg">
+      <Stack spacing={2}>
+        <Stack direction="row" spacing={2} sx={{mt:6, mb:6}}>
+          <PlayerView />
+          <PlayerInfo />
+        </Stack>
+        {/* <ErrorInfo /> */}
         <Copyright />
-      </Box>
+      </Stack>
     </Container>
   );
 }
