@@ -35,44 +35,7 @@ export default class MyDocument extends Document {
                 'videoCapabilities': [{
                 'contentType': 'video/mp4;codecs="avc1.42E01E"'
                 }]
-              }];
-
-              const videoElement = document.createElement('video');
-
-              try {
-                navigator.requestMediaKeySystemAccess('com.widevine.alpha', config).then(function(mediaKeySystemAccess) {
-                  localStorage.setItem('player_multidrm', 'Widevine Supported');
-                }).catch(function(e) {
-                });
-              } catch (e) {
-              }
-
-              try {
-                navigator.requestMediaKeySystemAccess('com.microsoft.playready', config).then(function(mediaKeySystemAccess) {
-                  localStorage.setItem('player_multidrm', 'PlayReady Supported');
-                }).catch(function(e) {
-                });
-              } catch (e) {
-              }
-
-              try {
-                videoElement.webkitSetMediaKeys(new window.WebKitMediaKeys('com.apple.fps.1_0'));
-                localStorage.setItem('player_multidrm', 'Fairplay Supported');
-              } catch (e) {
-              }
-
-              if (localStorage.getItem('player_multidrm')) {
-                localStorage.setItem('player_multidrm', 'MultiDrm Not Supported');
-              }
-
-              try{
-                const playType = videoElement.canPlayType('video/mp4');
-                if(playType!='') {
-                  localStorage.setItem('player_supported', 'mp4 video support');
-                }
-              } catch (e){
-                localStorage.setItem('player_supported', 'mp4 video not supported this browser');
-              }`,
+              }];`,
             }}
           />
         </Head>

@@ -1,31 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Box from "@mui/material/Box";
 import useInfoStore from "../../store/info";
-import jwt from "jsonwebtoken";
-
-const generateJwt = (info) => {
-  const expt =
-    Math.round(new Date().getTime() / 1000) + 60 * 60 * 24 * 365 * 100;
-
-  let payload = {
-    mc: [
-      {
-        mckey: info.mckey,
-      },
-    ],
-    cuid: info.cuid,
-    expt: expt,
-  };
-
-  const token = jwt.sign(payload, info.security, {
-    algorithm: "HS256",
-    expiresIn: expt,
-  });
-
-  const custom = info.custom;
-
-  return `https://v.kr.kollus.com/s?jwt=${token}&custom_key=${custom}`;
-};
+import {generateJwt} from "../../util/jwt";
 
 const errorHandler = () => {
   let controller = new VgControllerClient({
@@ -43,11 +19,10 @@ const errorHandler = () => {
 };
 
 const PlayerView = (props) => {
-  const { info, setInfo } = useInfoStore();
-  const [src, setSrc] = useState();
+  const { src, generateSrc } = useInfoStore();
 
   useEffect(() => {
-    setSrc(generateJwt(info));
+    generateSrc();
   }, [])
 
   return (

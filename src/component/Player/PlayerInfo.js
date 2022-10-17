@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Stack from "@mui/material/Stack";
+import InfoPanel from "./Panel/InfoPanel";
+import { PropaneSharp } from "@mui/icons-material";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -16,11 +18,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -38,48 +36,81 @@ function a11yProps(index) {
   };
 }
 
-export default function PlayerInfo() {
+export default function PlayerInfo(props) {
   const [value, setValue] = useState(0);
-  const [multidrm, setMultidrm] = useState("");
-  const [supported, setSupported] = useState("");
+  const [multidrmCheck, setMultidrmCheck] = useState("");
+  const [typeCheck, setTypeCheck] = useState("");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const setMultidrmLocalStorage = () => {
-    setMultidrm(localStorage.getItem("player_multidrm"));
-  }
+  const multidrmCheckHandler = (message) => {
+    setMultidrmCheck(message);
+  };
 
-  const setSupportedLocalStorage = () => {
-    setSupported(localStorage.getItem("player_supported"));
-  }
+  const typeCheckHandler = (message) => {
+    setTypeCheck(message);
+  };
 
   useEffect(() => {
     // Perform localStorage action
-    setMultidrmLocalStorage();
-    setSupportedLocalStorage();
-  }, [])
+    const videoElement = document.createElement("video");
+
+    try {
+      navigator
+        .requestMediaKeySystemAccess("com.widevine.alpha", config)
+        .then(function (mediaKeySystemAccess) {
+          multidrmCheckHandler("Widevine Supported");
+        })
+        .catch(function (e) {});
+    } catch (e) {}
+
+    try {
+      navigator
+        .requestMediaKeySystemAccess("com.microsoft.playready", config)
+        .then(function (mediaKeySystemAccess) {
+          multidrmCheckHandler("PlayReady Supported");
+        })
+        .catch(function (e) {});
+    } catch (e) {}
+
+    try {
+      videoElement.webkitSetMediaKeys(
+        new window.WebKitMediaKeys("com.apple.fps.1_0")
+      );
+      multidrmCheckHandler("Fairplay Supported");
+    } catch (e) {}
+
+    if (multidrmCheck) {
+      multidrmCheckHandler("MultiDrm Not Supported");
+    }
+
+    try {
+      const playType = videoElement.canPlayType("video/mp4");
+      if (playType != "") {
+        typeCheckHandler("mp4 video Supported");
+      }
+    } catch (e) {
+      typeCheckHandler("mp4 video not Supported");
+    }
+  }, []);
 
   return (
     <>
       <Stack width={"400px"} spacing={2}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="fullWidth"
-          >
+          <Tabs value={value} onChange={handleChange} variant="fullWidth">
             <Tab label="콘텐츠 확인" {...a11yProps(0)} />
             <Tab label="Supported" {...a11yProps(1)} />
           </Tabs>
         </Box>
         <TabPanel component="div" value={value} index={0}>
-          {`mckey 및 보안 키, 사용자 키 저장`}
+          <InfoPanel setInfo={props.setInfo}/>
         </TabPanel>
         <TabPanel component="div" value={value} index={1}>
-          <div>{multidrm}</div>
-          <div>{supported}</div>
+          <div>{multidrmCheck}</div>
+          <div>{typeCheck}</div>
         </TabPanel>
       </Stack>
     </>

@@ -10,8 +10,8 @@ export default function Index() {
     <Container maxWidth="lg">
       <Stack spacing={2}>
         <Stack direction="row" spacing={2} sx={{mt:6, mb:6}}>
-          <PlayerView />
-          <PlayerInfo />
+          <PlayerView/>
+          <PlayerInfo/>
         </Stack>
         {/* <ErrorInfo /> */}
         <Copyright />
