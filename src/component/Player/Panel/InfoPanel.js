@@ -13,16 +13,19 @@ import useInfoStore from "../../../store/info";
 
 export default function InfoPanel() {
   const { src, cuid, mckey, security, customer, setInfo, generateSrc } = useInfoStore();
+  const [contentLink, setContentLink] = useState();
 
   const [values, setValues] = useState({
     security: "",
     customer: "",
     mckey: "",
+    src: "",
     showSecurity: false,
     showCustomer: false,
   });
 
   const changeHandler = (prop) => (event) => {
+    localStorage.setItem(prop, event.target.value)
     setValues({ ...values, [prop]: event.target.value });
   };
 
@@ -52,8 +55,24 @@ export default function InfoPanel() {
     event.preventDefault();
   };
 
+  const initialValues = () => {
+    setValues((prevState) => {
+      return {
+        ...prevState,
+        security: localStorage.getItem("security"),
+        customer: localStorage.getItem("customer"),
+      }
+    })
+  }
+
+  const initialContentLink = (contentLink) => {
+    setContentLink(contentLink);
+  }
+
   useEffect(() => {
-  }, []);
+    initialValues();
+    initialContentLink(src);
+  }, [src]);
 
   return (
     <>
@@ -108,16 +127,20 @@ export default function InfoPanel() {
         onChange={changeHandler("mckey")}
         />
         <TextField
-          id="contentCode"
-          label="영상 링크 (읽기전용)"
+          id="src"
+          label="영상 링크"
           multiline
-          defaultValue={src}
+          defaultValue={contentLink}
           InputProps={{
             readOnly: true,
+            style: {fontSize: "0.8rem"}
           }}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={changeHandler("src")}
           rows={6}
           variant="filled"
-          inputProps={{style: {fontSize: "0.8rem"}}}
         />
         <Button variant="contained" onClick={setContentHandler}>콘텐츠 확인</Button>
       </Stack>

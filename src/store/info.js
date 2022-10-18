@@ -4,7 +4,7 @@ import { generateJwt } from "../util/jwt";
 const useInfoStore = create((set) => ({
   src: "",
   cuid: "test",
-  mckey: "3zleDxnN",
+  mckey: "9G6jKGi5",
   security: "catenoid1",
   customer: "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
   setInfo: (props) =>
@@ -13,6 +13,12 @@ const useInfoStore = create((set) => ({
         mckey: props.mckey,
         security: props.security,
         customer: props.customer,
+      };
+    }),
+    setSrc: (props) =>
+    set((prevState) => {
+      return {
+        src: props,
       };
     }),
     generateSrc: () =>
