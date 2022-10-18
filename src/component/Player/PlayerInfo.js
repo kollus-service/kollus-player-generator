@@ -5,7 +5,6 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Stack from "@mui/material/Stack";
 import InfoPanel from "./Panel/InfoPanel";
-import { PropaneSharp } from "@mui/icons-material";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
