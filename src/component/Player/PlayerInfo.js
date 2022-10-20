@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Stack from "@mui/material/Stack";
-import InfoPanel from "./Panel/InfoPanel";
+import VodPanel from "./Panel/VodPanel";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -60,7 +60,7 @@ export default function PlayerInfo(props) {
       navigator
         .requestMediaKeySystemAccess("com.widevine.alpha", config)
         .then(function (mediaKeySystemAccess) {
-          multidrmCheckHandler("Widevine Supported");
+          multidrmCheckHandler("Google Widevine Supported");
         })
         .catch(function (e) {});
     } catch (e) {}
@@ -69,7 +69,7 @@ export default function PlayerInfo(props) {
       navigator
         .requestMediaKeySystemAccess("com.microsoft.playready", config)
         .then(function (mediaKeySystemAccess) {
-          multidrmCheckHandler("PlayReady Supported");
+          multidrmCheckHandler("Apple PlayReady Supported");
         })
         .catch(function (e) {});
     } catch (e) {}
@@ -78,7 +78,7 @@ export default function PlayerInfo(props) {
       videoElement.webkitSetMediaKeys(
         new window.WebKitMediaKeys("com.apple.fps.1_0")
       );
-      multidrmCheckHandler("Fairplay Supported");
+      multidrmCheckHandler("MS Fairplay Supported");
     } catch (e) {}
 
     if (multidrmCheck) {
@@ -97,17 +97,25 @@ export default function PlayerInfo(props) {
 
   return (
     <>
-      <Stack width={"400px"} spacing={2}>
+      <Stack width={"450px"} spacing={2}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs value={value} onChange={handleChange} variant="fullWidth">
-            <Tab label="콘텐츠 확인" {...a11yProps(0)} />
+          <Tabs value={value} onChange={handleChange}>
+            <Tab label="VOD" {...a11yProps(0)} />
+            <Tab label="LIVE" {...a11yProps(0)} />
+            <Tab label="VOD (Multi DRM)" {...a11yProps(0)} />
             <Tab label="Supported" {...a11yProps(1)} />
           </Tabs>
         </Box>
         <TabPanel component="div" value={value} index={0}>
-          <InfoPanel setInfo={props.setInfo}/>
+          <VodPanel/>
         </TabPanel>
         <TabPanel component="div" value={value} index={1}>
+          LIVE - 작업 예정
+        </TabPanel>
+        <TabPanel component="div" value={value} index={2}>
+          VOD (Multi DRM) - 작업 예정 
+        </TabPanel>
+        <TabPanel component="div" value={value} index={3}>
           <div>{multidrmCheck}</div>
           <div>{typeCheck}</div>
         </TabPanel>

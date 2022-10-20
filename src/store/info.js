@@ -1,34 +1,38 @@
 import create from "zustand";
-import { generateJwt } from "../util/jwt";
+import { generateVodJwt } from "../util/jwt";
 
 const useInfoStore = create((set) => ({
   src: "",
   cuid: "test",
   mckey: "9G6jKGi5",
-  security: "catenoid1",
-  customer: "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
-  setInfo: (props) =>
+  vodSecurity: "catenoid1",
+  vodCustomer:
+    "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
+  liveSecurity: "catenoid1",
+  liveCustomer:
+    "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
+  setVodInfo: (props) =>
     set((prevState) => {
       return {
         mckey: props.mckey,
-        security: props.security,
-        customer: props.customer,
+        vodSecurity: props.vodSecurity,
+        vodCustomer: props.vodCustomer,
       };
     }),
-    setSrc: (props) =>
+  setSrc: (props) =>
     set((prevState) => {
       return {
         src: props,
       };
     }),
-    generateSrc: () =>
+  generateVodSrc: () =>
     set((prevState) => {
       return {
-        src: generateJwt({
+        src: generateVodJwt({
           cuid: prevState.cuid,
           mckey: prevState.mckey,
-          security: prevState.security,
-          customer: prevState.customer,
+          vodSecurity: prevState.vodSecurity,
+          vodCustomer: prevState.vodCustomer,
         }),
       };
     }),

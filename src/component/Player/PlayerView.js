@@ -7,7 +7,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import useInfoStore from "../../store/info";
-import { generateJwt } from "../../util/jwt";
 
 const errorHandler = () => {
   let controller = new VgControllerClient({
@@ -25,7 +24,7 @@ const errorHandler = () => {
 };
 
 const PlayerView = (props) => {
-  const { src, generateSrc } = useInfoStore();
+  const { src, generateVodSrc } = useInfoStore();
   const [iframe, setIframe] = useState("");
 
   const initialIframe = (source) => {
@@ -35,7 +34,7 @@ const PlayerView = (props) => {
   };
 
   useEffect(() => {
-    generateSrc();
+    generateVodSrc();
     initialIframe(src);
   }, [src]);
 

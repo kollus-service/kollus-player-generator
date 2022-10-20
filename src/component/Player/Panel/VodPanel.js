@@ -11,13 +11,13 @@ import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import useInfoStore from "../../../store/info";
 
-export default function InfoPanel() {
-  const { src, cuid, mckey, security, customer, setInfo, generateSrc } = useInfoStore();
+export default function VodPanel() {
+  const { src, cuid, mckey, vodSecurity, vodCustomer, setVodInfo, generateVodSrc } = useInfoStore();
   const [contentLink, setContentLink] = useState();
 
   const [values, setValues] = useState({
-    security: "",
-    customer: "",
+    vodSecurity: "",
+    vodCustomer: "",
     mckey: "",
     src: "",
     showSecurity: false,
@@ -29,13 +29,13 @@ export default function InfoPanel() {
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  const securityShowHandler = (key) => {
+  const vodSecurityShowHandler = (key) => {
     setValues((prevState) => {
-      if (key === "security") {
+      if (key === "vodSecurity") {
         prevState.showSecurity = !prevState.showSecurity;
       }
 
-      if (key === "customer") {
+      if (key === "vodCustomer") {
         prevState.showCustomer = !prevState.showCustomer;
       }
 
@@ -46,9 +46,9 @@ export default function InfoPanel() {
   };
 
   const setContentHandler = () => {
-    const newInfo = {security:values.security, customer: values.customer, mckey: values.mckey};
-    setInfo(newInfo);
-    generateSrc();
+    const newInfo = {vodSecurity:values.vodSecurity, vodCustomer: values.vodCustomer, mckey: values.mckey};
+    setVodInfo(newInfo);
+    generateVodSrc();
   }
 
   const preventHandler = (event) => {
@@ -59,8 +59,8 @@ export default function InfoPanel() {
     setValues((prevState) => {
       return {
         ...prevState,
-        security: localStorage.getItem("security"),
-        customer: localStorage.getItem("customer"),
+        vodSecurity: localStorage.getItem("vodSecurity"),
+        vodCustomer: localStorage.getItem("vodCustomer"),
       }
     })
   }
@@ -79,18 +79,18 @@ export default function InfoPanel() {
       {/* {`mckey 및 보안 키, 사용자 키 저장`} */}
       <Stack spacing={2}>
         <FormControl variant="outlined">
-          <InputLabel htmlFor="security">서비스 계정 키</InputLabel>
+          <InputLabel htmlFor="vodSecurity">서비스 계정 키</InputLabel>
           <OutlinedInput
-            id="security"
+            id="vodSecurity"
             label="서비스 계정 키"
             type={values.showSecurity ? "text" : "password"}
-            value={values.security}
-            onChange={changeHandler("security")}
+            value={values.vodSecurity}
+            onChange={changeHandler("vodSecurity")}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
-                  onClick={() => securityShowHandler("security")}
+                  onClick={() => vodSecurityShowHandler("vodSecurity")}
                   onMouseDown={preventHandler}
                   edge="end"
                 >
@@ -101,18 +101,18 @@ export default function InfoPanel() {
           />
         </FormControl>
         <FormControl variant="outlined">
-          <InputLabel htmlFor="customer">사용자 키</InputLabel>
+          <InputLabel htmlFor="vodCustomer">사용자 키</InputLabel>
           <OutlinedInput
-            id="customer"
+            id="vodCustomer"
             label="사용자 키"
             type={values.showCustomer ? "text" : "password"}
-            value={values.customer}
-            onChange={changeHandler("customer")}
+            value={values.vodCustomer}
+            onChange={changeHandler("vodCustomer")}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
-                  onClick={() => securityShowHandler("customer")}
+                  onClick={() => vodSecurityShowHandler("vodCustomer")}
                   onMouseDown={preventHandler}
                   edge="end"
                 >

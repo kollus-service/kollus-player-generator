@@ -190,7 +190,6 @@ const useErrorCodeStore = create((set) => ({
       msg : "DNS 설정 문제로 재생이 되지 않는 경우입니다.",
       url: "https://catenoid-support.atlassian.net/wiki/spaces/SUP/pages/3311873/8481+DNS"
     }
-
   },
   addErrorCode: (props) =>
     set((prevState) => {
