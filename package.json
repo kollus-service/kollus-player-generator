@@ -10,7 +10,7 @@
     "start-win": "set PORT=9090 && next dev",
     "build": "next build",
     "build-win": "next build",
-    "export": "next build && next export",
+    "export": "cp next.config.prod next.config && next build && next export",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "generate": "rm -rf node_modules/.cache && next build && next export",
