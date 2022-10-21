@@ -1,5 +1,6 @@
 {
   "name": "find-player-error",
+  "homepage": "https://kollus-service.github.io/find-player-error/",
   "version": "5.0.0",
   "private": true,
   "scripts": {
@@ -13,8 +14,8 @@
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "generate": "rm -rf node_modules/.cache && next build && next export",
-    "deploy": "touch out/.nojekyll && git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && cd .. && git subtree push --prefix out origin gh-pages",
-    "deploy-win": "git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && cd .. && git subtree push --prefix out origin gh-pages"
+    "deploy": "touch out/.nojekyll && git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "deploy-win": "git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@emotion/cache": "latest",
