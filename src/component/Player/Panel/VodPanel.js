@@ -132,7 +132,7 @@ export default function VodPanel() {
           multiline
           defaultValue={contentLink}
           InputProps={{
-            readOnly: true,
+            // readOnly: true,
             style: {fontSize: "0.8rem"}
           }}
           InputLabelProps={{
