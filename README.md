@@ -1,4 +1,4 @@
-# Find Kollus Error
+# Find Player Error
 
 ## Feature
 - 영상의 에러코드를 VgController 를 사용해서 보여주고 왜 안되는지 알려준다.
