@@ -10,12 +10,13 @@
     "start-win": "set PORT=9090 && next dev",
     "build": "next build",
     "build-win": "next build",
-    "export": "cp next.config.prod next.config && next build && next export",
+    "export": "cp next.config.js.prod next.config.js && next build && next export",
+    "export-win": "copy next.config.js.prod next.config.js && next build && next export",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "generate": "rm -rf node_modules/.cache && next build && next export",
     "deploy": "touch out/.nojekyll && git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
-    "deploy-win": "git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy-win": "git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages && copy next.config.js.dev next.config.js"
   },
   "dependencies": {
     "@emotion/cache": "latest",
