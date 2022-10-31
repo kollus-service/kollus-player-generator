@@ -35,7 +35,7 @@ function a11yProps(index) {
   };
 }
 
-export default function PlayerInfo(props) {
+export default function ErrorInfo(props) {
   const [value, setValue] = useState(0);
   const [multidrmCheck, setMultidrmCheck] = useState("");
   const [typeCheck, setTypeCheck] = useState("");
