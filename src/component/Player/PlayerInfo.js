@@ -115,7 +115,7 @@ export default function PlayerInfo(props) {
         <TabPanel component="div" value={value} index={2}>
           VOD (Multi DRM) - 작업 예정 
         </TabPanel> */}
-        <TabPanel component="div" value={value} index={3}>
+        <TabPanel component="div" value={value} index={1}>
           <div>{multidrmCheck}</div>
           <div>{typeCheck}</div>
         </TabPanel>
