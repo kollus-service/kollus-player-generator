@@ -23,7 +23,7 @@ const generateVodJwt = (info) => {
 
   const customer = info.vodCustomer;
 
-  return `https://v.kr.kollus.com/s?jwt=${token}&custom_key=${customer}`;
+  return `https://v.kr.kollus.com/sr?jwt=${token}&custom_key=${customer}`;
 };
 
 const generateLiveJwt = (info) => {
