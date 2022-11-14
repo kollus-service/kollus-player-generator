@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Copyright from "../src/component/Copyright";
 import ToggleColorMode from "../src/component/Theme/ToggleColorMode.";
 import PlayerView from "../src/component/Player/PlayerView";
-import PlayerInfo from "../src/component/Player/PlayerInfo";
+import TabMenu from "../src/component/Player/TabMenu";
 
 export default function Index(props) {
   return (
@@ -17,7 +17,7 @@ export default function Index(props) {
           sx={{ mt: 6, mb: 6, height: "600px" }}
         >
           <PlayerView />
-          <PlayerInfo />
+          <TabMenu />
         </Stack>
         <Stack direction="row" spacing={2} sx={{ mb: 6 }}>
           {/* <ErrorView /> */}

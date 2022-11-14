@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import LinkIcon from "@mui/icons-material/Link";
 import TextField from "@mui/material/TextField";
 import Accordion from "@mui/material/Accordion";
 import Typography from "@mui/material/Typography";
@@ -7,6 +10,16 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import useInfoStore from "../../store/info";
+
+const ShareButton = styled(Button)(({ theme }) => ({
+  justifyContent: "flex-start",
+  borderColor: "white",
+  "&:hover": {
+    borderColor: "white",
+    color: "white",
+    backgroundColor: "#3B81F6",
+  },
+}));
 
 const errorHandler = () => {
   let controller = new VgControllerClient({
@@ -56,9 +69,19 @@ const PlayerView = (props) => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>태그 보기</Typography>
+          <Typography>콘텐츠 공유</Typography>
         </AccordionSummary>
         <AccordionDetails>
+          <Button
+            variant="contained"
+            startIcon={<LinkIcon />}
+            onClick={() => {
+              navigator.clipboard.writeText(src);
+            }}
+            sx={{ width: "100%", mb: 1 }}
+          >
+            링크 복사
+          </Button>
           <TextField
             id="contentCode"
             label="iFrame Tag"

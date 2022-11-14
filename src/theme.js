@@ -17,6 +17,10 @@ const theme = (mode) => {
       error: {
         main: red.A400,
       },
+      neutral: {
+        main: '#000000',
+        contrastText: '#fff',
+      },
     },
   };
 };

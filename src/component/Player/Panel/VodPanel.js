@@ -1,18 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Accordion from "@mui/material/Accordion";
 import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import InputLabel from "@mui/material/InputLabel";
 import IconButton from "@mui/material/IconButton";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import useInfoStore from "../../../store/info";
 
 export default function VodPanel() {
-  const { src, cuid, mckey, vodSecurity, vodCustomer, setVodInfo, generateVodSrc } = useInfoStore();
+  const {
+    src,
+    cuid,
+    mckey,
+    vodSecurity,
+    vodCustomer,
+    setVodInfo,
+    generateVodSrc,
+  } = useInfoStore();
   const [contentLink, setContentLink] = useState();
 
   const [values, setValues] = useState({
@@ -25,7 +38,7 @@ export default function VodPanel() {
   });
 
   const changeHandler = (prop) => (event) => {
-    localStorage.setItem(prop, event.target.value)
+    localStorage.setItem(prop, event.target.value);
     setValues({ ...values, [prop]: event.target.value });
   };
 
@@ -46,10 +59,14 @@ export default function VodPanel() {
   };
 
   const setContentHandler = () => {
-    const newInfo = {vodSecurity:values.vodSecurity, vodCustomer: values.vodCustomer, mckey: values.mckey};
+    const newInfo = {
+      vodSecurity: values.vodSecurity,
+      vodCustomer: values.vodCustomer,
+      mckey: values.mckey,
+    };
     setVodInfo(newInfo);
     generateVodSrc();
-  }
+  };
 
   const preventHandler = (event) => {
     event.preventDefault();
@@ -61,13 +78,13 @@ export default function VodPanel() {
         ...prevState,
         vodSecurity: localStorage.getItem("vodSecurity"),
         vodCustomer: localStorage.getItem("vodCustomer"),
-      }
-    })
-  }
+      };
+    });
+  };
 
   const initialContentLink = (contentLink) => {
     setContentLink(contentLink);
-  }
+  };
 
   useEffect(() => {
     initialValues();
@@ -122,27 +139,26 @@ export default function VodPanel() {
             }
           />
         </FormControl>
-        <TextField id="mckey" label="미디어 컨텐츠 키" 
-        value={values.mckey}
-        onChange={changeHandler("mckey")}
-        />
         <TextField
-          id="src"
-          label="영상 링크"
-          multiline
-          defaultValue={contentLink}
-          InputProps={{
-            // readOnly: true,
-            style: {fontSize: "0.8rem"}
-          }}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          onChange={changeHandler("src")}
-          rows={6}
-          variant="filled"
+          id="mckey"
+          label="미디어 컨텐츠 키"
+          value={values.mckey}
+          onChange={changeHandler("mckey")}
         />
-        <Button variant="contained" onClick={setContentHandler}>콘텐츠 확인</Button>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>설정</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+          </AccordionDetails>
+        </Accordion>
+        <Button variant="contained" onClick={setContentHandler}>
+          콘텐츠 확인
+        </Button>
       </Stack>
     </>
   );

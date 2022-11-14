@@ -3,6 +3,8 @@ import jwt from "jsonwebtoken";
 const generateVodJwt = (info) => {
   if(!info.mckey || !info.cuid || !info.vodSecurity || !info.vodCustomer) return;
   
+  let path = info.path;
+  
   const expt =
     Math.round(new Date().getTime() / 1000) + 60 * 60 * 24 * 365 * 100;
 
@@ -23,7 +25,7 @@ const generateVodJwt = (info) => {
 
   const customer = info.vodCustomer;
 
-  return `https://v.kr.kollus.com/sr?jwt=${token}&custom_key=${customer}`;
+  return `https://v.kr.kollus.com/${path}?jwt=${token}&custom_key=${customer}`;
 };
 
 const generateLiveJwt = (info) => {
