@@ -3,7 +3,8 @@ import jwt from "jsonwebtoken";
 const generateVodJwt = (info) => {
   if(!info.mckey || !info.cuid || !info.vodSecurity || !info.vodCustomer) return;
   
-  let path = info.path;
+  // ??= : min 값이 비어있는 경우, 5분으로 할당
+  let path = info.path ??= 's';
   
   const expt =
     Math.round(new Date().getTime() / 1000) + 60 * 60 * 24 * 365 * 100;
