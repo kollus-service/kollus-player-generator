@@ -96,10 +96,10 @@ export default function VodPanel() {
       {/* {`mckey 및 보안 키, 사용자 키 저장`} */}
       <Stack spacing={2}>
         <FormControl variant="outlined">
-          <InputLabel htmlFor="vodSecurity">서비스 계정 키</InputLabel>
+          <InputLabel htmlFor="vodSecurity">Service Account Key</InputLabel>
           <OutlinedInput
             id="vodSecurity"
-            label="서비스 계정 키"
+            label="Service Account Key"
             type={values.showSecurity ? "text" : "password"}
             value={values.vodSecurity}
             onChange={changeHandler("vodSecurity")}
@@ -118,10 +118,10 @@ export default function VodPanel() {
           />
         </FormControl>
         <FormControl variant="outlined">
-          <InputLabel htmlFor="vodCustomer">사용자 키</InputLabel>
+          <InputLabel htmlFor="vodCustomer">Customer Key</InputLabel>
           <OutlinedInput
             id="vodCustomer"
-            label="사용자 키"
+            label="Customer Key"
             type={values.showCustomer ? "text" : "password"}
             value={values.vodCustomer}
             onChange={changeHandler("vodCustomer")}
@@ -141,7 +141,7 @@ export default function VodPanel() {
         </FormControl>
         <TextField
           id="mckey"
-          label="미디어 컨텐츠 키"
+          label="Media Contents Key"
           value={values.mckey}
           onChange={changeHandler("mckey")}
         />
@@ -151,9 +151,14 @@ export default function VodPanel() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>설정</Typography>
+            <Typography>Advanced Option</Typography>
           </AccordionSummary>
           <AccordionDetails>
+            {/*
+              수정 & 적용 기능
+              여기에 JWT 넣고 생성하는 것 까지 가능한 스펙 만들기
+              Query String 도 추가
+            */}
           </AccordionDetails>
         </Accordion>
         <Button variant="contained" onClick={setContentHandler}>
