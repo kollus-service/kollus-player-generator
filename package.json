@@ -1,6 +1,6 @@
 {
-  "name": "find-player-error",
-  "homepage": "https://kollus-service.github.io/find-player-error/",
+  "name": "kollus-player-generator",
+  "homepage": "https://kollus-service.github.io/kollus-player-generator/",
   "version": "5.0.0",
   "private": true,
   "scripts": {
