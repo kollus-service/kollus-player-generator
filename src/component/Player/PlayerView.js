@@ -37,7 +37,7 @@ const errorHandler = () => {
 };
 
 const PlayerView = (props) => {
-  const { src, generateVodSrc } = useInfoStore();
+  const { src, json, generateVodSrc } = useInfoStore();
   const [iframe, setIframe] = useState("");
 
   const initialIframe = (source) => {

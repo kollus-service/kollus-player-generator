@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Checkbox from '@mui/material/Checkbox';
 import Accordion from "@mui/material/Accordion";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
@@ -9,10 +10,12 @@ import IconButton from "@mui/material/IconButton";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import TextareaAutosize from '@mui/base/TextareaAutosize';
 import InputAdornment from "@mui/material/InputAdornment";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import useInfoStore from "../../../store/info";
 
@@ -23,6 +26,9 @@ export default function VodPanel() {
     mckey,
     vodSecurity,
     vodCustomer,
+    payload,
+    advancedOption,
+    setAdvancedOption,
     setVodInfo,
     generateVodSrc,
   } = useInfoStore();
@@ -31,6 +37,7 @@ export default function VodPanel() {
   const [values, setValues] = useState({
     vodSecurity: "",
     vodCustomer: "",
+    payload: "",
     mckey: "",
     src: "",
     showSecurity: false,
@@ -62,8 +69,13 @@ export default function VodPanel() {
     const newInfo = {
       vodSecurity: values.vodSecurity,
       vodCustomer: values.vodCustomer,
-      mckey: values.mckey,
+      mckey: values.mckey
     };
+
+    if(advancedOption === true) {
+      newInfo.payload = JSON.parse(values.payload.split("\n").join(""));
+    }
+
     setVodInfo(newInfo);
     generateVodSrc();
   };
@@ -78,6 +90,7 @@ export default function VodPanel() {
         ...prevState,
         vodSecurity: localStorage.getItem("vodSecurity"),
         vodCustomer: localStorage.getItem("vodCustomer"),
+        payload: JSON.stringify(payload, null, 2),
       };
     });
   };
@@ -86,9 +99,16 @@ export default function VodPanel() {
     setContentLink(contentLink);
   };
 
+  const toggleAdvancedOption = () => {
+    setAdvancedOption((prevState) => {
+      return !prevState;
+    })
+  };
+
   useEffect(() => {
     initialValues();
     initialContentLink(src);
+    localStorage.setItem("payload", JSON.stringify(payload));
   }, [src]);
 
   return (
@@ -155,10 +175,18 @@ export default function VodPanel() {
           </AccordionSummary>
           <AccordionDetails>
             {/*
-              수정 & 적용 기능
-              여기에 JWT 넣고 생성하는 것 까지 가능한 스펙 만들기
               Query String 도 추가
             */}
+            <FormControlLabel control={<Checkbox onChange={toggleAdvancedOption}/>} label="payload 적용"/>
+            <TextareaAutosize
+            id="payload"
+            label="payload"
+            defaultValue={JSON.stringify(payload, null, 2)}
+            onChange={changeHandler("payload")}
+            rows={6}
+            variant="filled"
+            style={{ width: "100%" }}
+          />
           </AccordionDetails>
         </Accordion>
         <Button variant="contained" onClick={setContentHandler}>
