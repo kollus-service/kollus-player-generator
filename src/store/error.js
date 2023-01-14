@@ -1,7 +1,7 @@
 import {create} from "zustand";
 
 const useErrorCodeStore = create((set) => ({
-  error: {
+  errorList: {
     8661: {
       msg: "스마트 폰에서 주로 발생하며, 개발자 옵션 중 [활동보관 안 함] 을 OFF로 설정합니다.",
       url: "https://catenoid-support.atlassian.net/wiki/spaces/SUP/pages/3312005/8661"
@@ -119,7 +119,7 @@ const useErrorCodeStore = create((set) => ({
       url : "https://catenoid-support.atlassian.net/wiki/spaces/SUP/pages/3310596/3003"
     },
     3004: {
-      msg : "제어판-인터넷 옵션 초기화가 필요합니다. (크롬 브라우저 사용 권장)",
+      msg : "Multi DRM 콘텐츠의 경우 해당 에러가 발생할 수 있습니다.\nPE팀으로 문의 주세요.",
       url : "https://catenoid-support.atlassian.net/wiki/spaces/SUP/pages/3311969/3004"
     },
     3012: {

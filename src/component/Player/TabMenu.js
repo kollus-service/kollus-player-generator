@@ -55,7 +55,6 @@ export default function TabMenu(props) {
   useEffect(() => {
     // Perform localStorage action
     const videoElement = document.createElement("video");
-
     try {
       navigator
         .requestMediaKeySystemAccess("com.widevine.alpha", config)
@@ -69,7 +68,7 @@ export default function TabMenu(props) {
       navigator
         .requestMediaKeySystemAccess("com.microsoft.playready", config)
         .then(function (mediaKeySystemAccess) {
-          multidrmCheckHandler("Apple PlayReady Supported");
+          multidrmCheckHandler("MS PlayReady Supported");
         })
         .catch(function (e) {});
     } catch (e) {}
@@ -78,7 +77,7 @@ export default function TabMenu(props) {
       videoElement.webkitSetMediaKeys(
         new window.WebKitMediaKeys("com.apple.fps.1_0")
       );
-      multidrmCheckHandler("MS Fairplay Supported");
+      multidrmCheckHandler("Apple Fairplay Supported");
     } catch (e) {}
 
     if (multidrmCheck) {
@@ -100,7 +99,7 @@ export default function TabMenu(props) {
       <Stack width={"450px"} spacing={2}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs value={value} onChange={handleChange}>
-            <Tab label="VOD" {...a11yProps(0)} />
+            <Tab label="Player" {...a11yProps(0)} />
             {/* <Tab label="LIVE" {...a11yProps(0)} />
             <Tab label="VOD (Multi DRM)" {...a11yProps(0)} /> */}
             <Tab label="Supported" {...a11yProps(1)} />

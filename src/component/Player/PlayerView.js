@@ -1,54 +1,53 @@
 import React, { useEffect, useState } from "react";
-import { styled } from "@mui/material/styles";
+import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
+import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
-import LinkIcon from "@mui/icons-material/Link";
-import TextField from "@mui/material/TextField";
-import Accordion from "@mui/material/Accordion";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
+import AlertTitle from "@mui/material/AlertTitle";
 import useInfoStore from "../../store/info";
-
-const ShareButton = styled(Button)(({ theme }) => ({
-  justifyContent: "flex-start",
-  borderColor: "white",
-  "&:hover": {
-    borderColor: "white",
-    color: "white",
-    backgroundColor: "#3B81F6",
-  },
-}));
-
-const errorHandler = () => {
-  let controller = new VgControllerClient({
-    //getElementById 값의 영상이 나올 iframe의 id값을 넣으시면 됩니다.
-    target_window: document.getElementById("kollus-player").contentWindow,
-  });
-
-  controller.on("ready", function () {
-    localStorage.setItem("player_id", controller.get_player_id());
-  });
-
-  controller.on("error", function (code) {
-    localStorage.setItem("player_error", code);
-  });
-};
+import useErrorCodeStore from "../../store/error";
 
 const PlayerView = (props) => {
-  const { src, json, generateVodSrc } = useInfoStore();
-  const [iframe, setIframe] = useState("");
+  const { src, generateVodSrc } = useInfoStore();
+  const { errorList } = useErrorCodeStore();
 
-  const initialIframe = (source) => {
-    setIframe(
-      `<iframe id="kollus-player" className="kollus-player" width="640" height="480" src="${source}" frameBorder="0" allowFullScreen></iframe>`
-    );
+  const [info, setInfo] = useState({
+    load: true,
+    status: "success",
+    errorCode: null,
+  });
+
+  const updateInfo = (key, value) => {
+    setInfo((prevState) => {
+      return {
+        ...prevState,
+        [key]: value,
+      };
+    });
+  };
+
+  const errorHandler = () => {
+    let controller = new VgControllerClient({
+      target_window: document.getElementById("kollus-player").contentWindow,
+    });
+
+    controller.on("ready", () => {
+      updateInfo("load", false);
+      updateInfo("status", "success");
+      updateInfo("errorCode", null);
+    });
+
+    controller.on("play", () => {});
+
+    controller.on("error", (code) => {
+      updateInfo("status", "error");
+      updateInfo("errorCode", Math.abs(code));
+    });
   };
 
   useEffect(() => {
+    updateInfo("load", true);
     generateVodSrc();
-    initialIframe(src);
   }, [src]);
 
   return (
@@ -63,43 +62,34 @@ const PlayerView = (props) => {
         frameBorder="0"
         allowFullScreen
       ></iframe>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>콘텐츠 공유</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Button
-            variant="contained"
-            startIcon={<LinkIcon />}
-            onClick={() => {
-              navigator.clipboard.writeText(src);
-            }}
-            sx={{ width: "100%", mb: 1 }}
-          >
-            링크 복사
-          </Button>
-          <TextField
-            id="contentCode"
-            label="iFrame Tag"
-            multiline
-            defaultValue={iframe}
-            InputProps={{
-              // readOnly: true,
-              style: { fontSize: "12px" },
-            }}
-            rows={6}
-            variant="filled"
-            sx={{ width: "100%" }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-        </AccordionDetails>
-      </Accordion>
+      <Alert
+        severity={info.load === true ? "info" : info.status}
+        sx={{ width: "100%" }}
+      >
+        <Stack spacing={2} justifyContent="space-between">
+          <AlertTitle>
+            {info.load === true
+              ? "Check..."
+              : info.status.charAt(0).toUpperCase() + info.status.slice(1)}
+          </AlertTitle>
+
+          {info.load === false && errorList[info.errorCode] && (
+            <pre>{errorList[info.errorCode].msg}</pre>
+          )}
+
+          {info.load === false && errorList[info.errorCode] && (
+            <Button
+              target="_blank"
+              href={errorList[info.errorCode].url}
+              variant="contained"
+              color="warning"
+              sx={{ margin: "0 2px", padding: "0 4px" }}
+            >
+              해결방법 자세히 보기
+            </Button>
+          )}
+        </Stack>
+      </Alert>
     </Stack>
   );
 };

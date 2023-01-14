@@ -27,7 +27,7 @@ const generateVodJwt = (info) => {
   
   const customer = info.vodCustomer;
   
-  return `https://v.kr.kollus.com/${path}?jwt=${token}&custom_key=${customer}`;
+  return `https://v.kr.kollus.com/${path}?jwt=${token}&custom_key=${customer}&purge_cache`;
 };
 
 const generateLiveJwt = () => {

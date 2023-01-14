@@ -2,9 +2,9 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
 import Copyright from "../src/component/Copyright";
-import ToggleColorMode from "../src/component/Theme/ToggleColorMode.";
-import PlayerView from "../src/component/Player/PlayerView";
 import TabMenu from "../src/component/Player/TabMenu";
+import PlayerView from "../src/component/Player/PlayerView";
+import ToggleColorMode from "../src/component/Theme/ToggleColorMode.";
 
 export default function Index(props) {
   return (
@@ -18,10 +18,6 @@ export default function Index(props) {
         >
           <PlayerView />
           <TabMenu />
-        </Stack>
-        <Stack direction="row" spacing={2} sx={{ mb: 6 }}>
-          {/* <ErrorView /> */}
-          {/* <ErrorInfo /> */}
         </Stack>
         <Copyright />
       </Stack>

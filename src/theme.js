@@ -1,4 +1,4 @@
-import { red } from "@mui/material/colors";
+import { red, teal } from "@mui/material/colors";
 
 // Create a theme instance.
 const theme = (mode) => {
@@ -13,6 +13,10 @@ const theme = (mode) => {
       },
       secondary: {
         main: "#19857b",
+      },
+      confirm: {
+        main: teal[500],
+        hover: teal[700],
       },
       error: {
         main: red.A400,

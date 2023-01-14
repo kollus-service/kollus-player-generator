@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Checkbox from '@mui/material/Checkbox';
+import Checkbox from "@mui/material/Checkbox";
+import LinkIcon from "@mui/icons-material/Link";
 import Accordion from "@mui/material/Accordion";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
@@ -10,7 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import TextareaAutosize from '@mui/base/TextareaAutosize';
+import TextareaAutosize from "@mui/base/TextareaAutosize";
 import InputAdornment from "@mui/material/InputAdornment";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -22,10 +23,6 @@ import useInfoStore from "../../../store/info";
 export default function VodPanel() {
   const {
     src,
-    cuid,
-    mckey,
-    vodSecurity,
-    vodCustomer,
     payload,
     advancedOption,
     setAdvancedOption,
@@ -33,6 +30,7 @@ export default function VodPanel() {
     generateVodSrc,
   } = useInfoStore();
   const [contentLink, setContentLink] = useState();
+  const [iframe, setIframe] = useState("");
 
   const [values, setValues] = useState({
     vodSecurity: "",
@@ -69,10 +67,10 @@ export default function VodPanel() {
     const newInfo = {
       vodSecurity: values.vodSecurity,
       vodCustomer: values.vodCustomer,
-      mckey: values.mckey
+      mckey: values.mckey,
     };
 
-    if(advancedOption === true) {
+    if (advancedOption === true) {
       newInfo.payload = JSON.parse(values.payload.split("\n").join(""));
     }
 
@@ -88,8 +86,8 @@ export default function VodPanel() {
     setValues((prevState) => {
       return {
         ...prevState,
-        vodSecurity: localStorage.getItem("vodSecurity"),
-        vodCustomer: localStorage.getItem("vodCustomer"),
+        vodSecurity: localStorage.getItem("vodSecurity")?localStorage.getItem("vodSecurity"):"",
+        vodCustomer: localStorage.getItem("vodCustomer")?localStorage.getItem("vodCustomer"):"",
         payload: JSON.stringify(payload, null, 2),
       };
     });
@@ -102,11 +100,18 @@ export default function VodPanel() {
   const toggleAdvancedOption = () => {
     setAdvancedOption((prevState) => {
       return !prevState;
-    })
+    });
+  };
+
+  const initialIframe = (source) => {
+    setIframe(
+      `<iframe id="kollus-player" className="kollus-player" width="640" height="480" src="${source}" frameBorder="0" allowFullScreen></iframe>`
+    );
   };
 
   useEffect(() => {
     initialValues();
+    initialIframe(src);
     initialContentLink(src);
     localStorage.setItem("payload", JSON.stringify(payload));
   }, [src]);
@@ -161,10 +166,33 @@ export default function VodPanel() {
         </FormControl>
         <TextField
           id="mckey"
-          label="Media Contents Key"
-          value={values.mckey}
+          label={advancedOption?"Payload 사용 중":"Media Contents Key"}
+          value={advancedOption === true?"":values.mckey}
           onChange={changeHandler("mckey")}
+          disabled={advancedOption === true}
         />
+        <Button
+          variant="contained"
+          onClick={setContentHandler}
+          sx={{
+            backgroundColor: "confirm.main",
+            "&:hover": {
+              backgroundColor: "confirm.hover",
+            },
+          }}
+        >
+          콘텐츠 확인
+        </Button>
+        <Button
+          variant="contained"
+          startIcon={<LinkIcon />}
+          onClick={() => {
+            navigator.clipboard.writeText(src);
+          }}
+          sx={{ width: "100%", mb: 1 }}
+        >
+          URL 복사
+        </Button>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -174,24 +202,40 @@ export default function VodPanel() {
             <Typography>Advanced Option</Typography>
           </AccordionSummary>
           <AccordionDetails>
+            <TextField
+              id="contentCode"
+              label="iFrame 태그 확인"
+              multiline
+              defaultValue={iframe}
+              InputProps={{
+                // readOnly: true,
+                style: { fontSize: "12px" },
+              }}
+              rows={6}
+              variant="filled"
+              sx={{ width: "100%" }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
             {/*
               Query String 도 추가
             */}
-            <FormControlLabel control={<Checkbox onChange={toggleAdvancedOption}/>} label="payload 적용"/>
+            <FormControlLabel
+              control={<Checkbox onChange={toggleAdvancedOption} />}
+              label="payload 적용"
+            />
             <TextareaAutosize
-            id="payload"
-            label="payload"
-            defaultValue={JSON.stringify(payload, null, 2)}
-            onChange={changeHandler("payload")}
-            rows={6}
-            variant="filled"
-            style={{ width: "100%" }}
-          />
+              id="payload"
+              label="payload"
+              defaultValue={JSON.stringify(payload, null, 2)}
+              onChange={changeHandler("payload")}
+              rows={6}
+              variant="filled"
+              style={{ width: "100%" }}
+            />
           </AccordionDetails>
         </Accordion>
-        <Button variant="contained" onClick={setContentHandler}>
-          콘텐츠 확인
-        </Button>
       </Stack>
     </>
   );
