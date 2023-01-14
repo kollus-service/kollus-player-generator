@@ -64,7 +64,11 @@ const PlayerView = (props) => {
       ></iframe>
       <Alert
         severity={info.load === true ? "info" : info.status}
-        sx={{ width: "100%" }}
+        sx={{
+          "& .MuiAlert-message": {
+            width: "100%",
+          },
+        }}
       >
         <Stack spacing={2} justifyContent="space-between">
           <AlertTitle>
@@ -83,7 +87,7 @@ const PlayerView = (props) => {
               href={errorList[info.errorCode].url}
               variant="contained"
               color="warning"
-              sx={{ margin: "0 2px", padding: "0 4px" }}
+              sx={{ margin: "0 2px", padding: "0 4px", width: "100%" }}
             >
               해결방법 자세히 보기
             </Button>
