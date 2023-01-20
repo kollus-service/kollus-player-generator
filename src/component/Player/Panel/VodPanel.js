@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Divider from '@mui/material/Divider';
 import Checkbox from "@mui/material/Checkbox";
 import LinkIcon from "@mui/icons-material/Link";
 import Accordion from "@mui/material/Accordion";
@@ -24,6 +25,8 @@ export default function VodPanel() {
   const {
     src,
     payload,
+    multiDrmOption,
+    setMultiDrmOption,
     advancedOption,
     setAdvancedOption,
     setVodInfo,
@@ -38,6 +41,9 @@ export default function VodPanel() {
     payload: "",
     mckey: "",
     src: "",
+    inkaAccessKey: "",
+    inkaSiteKey: "",
+    inkaSiteID: "",
     showSecurity: false,
     showCustomer: false,
   });
@@ -70,6 +76,12 @@ export default function VodPanel() {
       mckey: values.mckey,
     };
 
+    if (multiDrmOption === true) {
+      newInfo.inkaAccessKey = JSON.parse(values.inkaAccessKey);
+      newInfo.inkaSiteKey = JSON.parse(values.inkaSiteKey);
+      newInfo.inkaSiteID = JSON.parse(values.inkaSiteID);
+    }
+
     if (advancedOption === true) {
       newInfo.payload = JSON.parse(values.payload.split("\n").join(""));
     }
@@ -88,6 +100,9 @@ export default function VodPanel() {
         ...prevState,
         vodSecurity: localStorage.getItem("vodSecurity")?localStorage.getItem("vodSecurity"):"",
         vodCustomer: localStorage.getItem("vodCustomer")?localStorage.getItem("vodCustomer"):"",
+        inkaAccessKey: localStorage.getItem("inkaAccessKey")?localStorage.getItem("inkaAccessKey"):"",
+        inkaSiteKey: localStorage.getItem("inkaSiteKey")?localStorage.getItem("inkaSiteKey"):"",
+        inkaSiteID: localStorage.getItem("inkaSiteID")?localStorage.getItem("inkaSiteID"):"",
         payload: JSON.stringify(payload, null, 2),
       };
     });
@@ -95,6 +110,12 @@ export default function VodPanel() {
 
   const initialContentLink = (contentLink) => {
     setContentLink(contentLink);
+  };
+
+  const toggleMultiDRMOption = () => {
+    setMultiDrmOption((prevState) => {
+      return !prevState;
+    });
   };
 
   const toggleAdvancedOption = () => {
@@ -171,6 +192,39 @@ export default function VodPanel() {
           onChange={changeHandler("mckey")}
           disabled={advancedOption === true}
         />
+
+        {multiDrmOption===true && 
+          (<>
+              <Divider>Multi DRM</Divider>
+            <TextField
+              id="inkaAccessKey"
+              label={advancedOption?"Payload 사용 중":"INKA Access Key"}
+              value={advancedOption === false?values.inkaAccessKey:""}
+              onChange={changeHandler("inkaAccessKey")}
+              disabled={advancedOption === true}
+            />
+          </>)
+        }
+
+        {multiDrmOption===true && 
+          (<TextField
+            id="inkaSiteKey"
+            label={advancedOption?"Payload 사용 중":"INKA Site Key"}
+            value={advancedOption === false?values.inkaSiteKey:""}
+            onChange={changeHandler("inkaSiteKey")}
+            disabled={advancedOption === true}
+          />)
+        }
+
+        {multiDrmOption===true && 
+          (<TextField
+            id="inkaSiteID"
+            label={advancedOption?"Payload 사용 중":"INKA Site ID"}
+            value={advancedOption === false?values.inkaSiteID:""}
+            onChange={changeHandler("inkaSiteID")}
+            disabled={advancedOption === true}
+          />)
+        }
         <Button
           variant="contained"
           onClick={setContentHandler}
@@ -219,11 +273,11 @@ export default function VodPanel() {
               }}
             />
             {/*
-              Query String 도 추가
+              Query String 도 추가?
             */}
             <FormControlLabel
-              control={<Checkbox />}
-              label="MultiDRM 적용 (예정)"
+              control={<Checkbox onChange={toggleMultiDRMOption} />}
+              label="MultiDRM 적용"
             />
             <FormControlLabel
               control={<Checkbox onChange={toggleAdvancedOption} />}

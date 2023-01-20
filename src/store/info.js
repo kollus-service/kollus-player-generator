@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { generateVodJwt } from "../util/jwt";
+import { generateVodJwt, generateMultiDrmVodJwt } from "../util/jwt";
 
 const useInfoStore = create((set) => ({
   src: "",
@@ -11,6 +11,9 @@ const useInfoStore = create((set) => ({
   liveSecurity: "catenoid1",
   liveCustomer:
     "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
+  inkaAccessKey: "",
+  inkaSiteKey: "",
+  inkaSiteID: "",
   path: "s",
   payload: {
     cuid: "test",
@@ -21,6 +24,13 @@ const useInfoStore = create((set) => ({
       },
     ],
   },
+  multiDrmOption: false,
+  setMultiDrmOption: (props) =>
+    set((prevState) => {
+      return {
+        multiDrmOption: !prevState.multiDrmOption,
+      };
+    }),
   advancedOption: false,
   setAdvancedOption: (props) =>
     set((prevState) => {
@@ -36,7 +46,13 @@ const useInfoStore = create((set) => ({
         vodCustomer: props.vodCustomer
       }
 
-      if(props.payload) {
+      if(prevState.multiDrmOption) {
+        updateInfo.inkaAccessKey = props.inkaAccessKey;
+        updateInfo.inkaSiteKey = props.inkaSiteKey;
+        updateInfo.inkaSiteID = props.inkaSiteID;
+      }
+
+      if(prevState.advancedOption) {
         updateInfo.payload = props.payload;
       }
 
@@ -64,8 +80,15 @@ const useInfoStore = create((set) => ({
 
       if(prevState.advancedOption === true) info.payload = prevState.payload;
 
+      let result;
+      if (prevState.multiDrmOption === true) {
+        result = generateMultiDrmVodJwt(info)
+      } else {
+        result = generateVodJwt(info)
+      }
+
       return {
-        src: generateVodJwt(info),
+        src: result,
       };
     }),
   generateLiveSrc: () =>
