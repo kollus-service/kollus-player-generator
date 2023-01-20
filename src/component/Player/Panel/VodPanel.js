@@ -222,6 +222,10 @@ export default function VodPanel() {
               Query String 도 추가
             */}
             <FormControlLabel
+              control={<Checkbox />}
+              label="MultiDRM 적용 (예정)"
+            />
+            <FormControlLabel
               control={<Checkbox onChange={toggleAdvancedOption} />}
               label="payload 적용"
             />

@@ -19,7 +19,6 @@ const generateVodJwt = (info) => {
     expt: expt,
   };
 
-  
   const token = jwt.sign(payload, info.vodSecurity, {
     algorithm: "HS256",
     expiresIn: payload.expt,

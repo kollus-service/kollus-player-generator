@@ -42,6 +42,10 @@ const useInfoStore = create((set) => ({
 
       return updateInfo;
     }),
+  setLiveInfo: (props) =>
+    set((prevState) => {
+      // Live 정보 setter 만들기
+    }),
   setSrc: (props) =>
     set((prevState) => {
       return {
@@ -64,6 +68,10 @@ const useInfoStore = create((set) => ({
         src: generateVodJwt(info),
       };
     }),
+  generateLiveSrc: () =>
+    set((prevState) => {
+      // Live 정보를 사용한 JWT 메서드 추가
+    })
 }));
 
 export default useInfoStore;

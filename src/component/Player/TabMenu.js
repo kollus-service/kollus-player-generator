@@ -99,22 +99,18 @@ export default function TabMenu(props) {
       <Stack width={"450px"} spacing={2}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs value={value} onChange={handleChange}>
-            <Tab label="Player" {...a11yProps(0)} />
-            {/* <Tab label="LIVE" {...a11yProps(0)} />
-            <Tab label="VOD (Multi DRM)" {...a11yProps(0)} /> */}
-            <Tab label="Supported" {...a11yProps(1)} />
+            <Tab label="VOD" {...a11yProps(0)} />
+            <Tab label="LIVE (작업 예정)" {...a11yProps(1)} />
+            <Tab label="Supported" {...a11yProps(2)} />
           </Tabs>
         </Box>
         <TabPanel component="div" value={value} index={0}>
           <VodPanel/>
         </TabPanel>
-        {/* <TabPanel component="div" value={value} index={1}>
-          LIVE - 작업 예정
+        <TabPanel component="div" value={value} index={1}>
+          작업 예정
         </TabPanel>
         <TabPanel component="div" value={value} index={2}>
-          VOD (Multi DRM) - 작업 예정 
-        </TabPanel> */}
-        <TabPanel component="div" value={value} index={1}>
           <div>{multidrmCheck}</div>
           <div>{typeCheck}</div>
         </TabPanel>
