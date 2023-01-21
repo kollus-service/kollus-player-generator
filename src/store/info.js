@@ -1,16 +1,17 @@
 import { create } from "zustand";
 import { generateVodJwt, generateMultiDrmVodJwt } from "../util/jwt";
 
-const useInfoStore = create((set) => ({
+const useInfoStore = create((set, get) => ({
   src: "",
   cuid: "test",
   mckey: "9G6jKGi5",
   vodSecurity: "catenoid1",
   vodCustomer:
-    "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
+  "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
   liveSecurity: "catenoid1",
   liveCustomer:
-    "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
+  "a40d063281341497de47a050da5bf80b431842fb9c6300b0fe35a3a1f6cfb2dd",
+  upkey: "",
   inkaAccessKey: "",
   inkaSiteKey: "",
   inkaSiteID: "",
@@ -47,6 +48,7 @@ const useInfoStore = create((set) => ({
       }
 
       if(prevState.multiDrmOption) {
+        updateInfo.uploadKey = props.uploadKey;
         updateInfo.inkaAccessKey = props.inkaAccessKey;
         updateInfo.inkaSiteKey = props.inkaSiteKey;
         updateInfo.inkaSiteID = props.inkaSiteID;
@@ -68,29 +70,28 @@ const useInfoStore = create((set) => ({
         src: props,
       };
     }),
-  generateVodSrc: () =>
-    set((prevState) => {
-      let info = {
-        cuid: prevState.cuid,
-        mckey: prevState.mckey,
-        vodSecurity: prevState.vodSecurity,
-        vodCustomer: prevState.vodCustomer,
-        path: prevState.path,
-      }
+  generateVodSrc: async () => {
+    let info = {
+      cuid: get().cuid,
+      mckey: get().mckey,
+      vodSecurity: get().vodSecurity,
+      vodCustomer: get().vodCustomer,
+      path: get().path,
+    }
 
-      if(prevState.advancedOption === true) info.payload = prevState.payload;
+    if(get().advancedOption === true) info.payload = get().payload;
 
-      let result;
-      if (prevState.multiDrmOption === true) {
-        result = generateMultiDrmVodJwt(info)
-      } else {
-        result = generateVodJwt(info)
-      }
-
-      return {
-        src: result,
-      };
-    }),
+    let result;
+    if (get().multiDrmOption === true) {
+      info.uploadKey = get().uploadKey;
+      info.inkaAccessKey = get().inkaAccessKey;
+      info.inkaSiteKey = get().inkaSiteKey;
+      info.inkaSiteID = get().inkaSiteID;
+      set(await generateMultiDrmVodJwt(info));
+    } else {
+      set(await generateVodJwt(info));
+    }
+  },
   generateLiveSrc: () =>
     set((prevState) => {
       // Live 정보를 사용한 JWT 메서드 추가

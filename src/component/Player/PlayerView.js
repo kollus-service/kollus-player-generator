@@ -48,7 +48,7 @@ const PlayerView = (props) => {
   useEffect(() => {
     updateInfo("load", true);
     generateVodSrc();
-  }, [src]);
+  }, []);
 
   return (
     <Stack spacing={2}>
@@ -60,7 +60,10 @@ const PlayerView = (props) => {
         height="480"
         src={src}
         frameBorder="0"
-        allowFullScreen
+        allowFullScreen=""
+        webkitallowfullscreen=""
+        mozallowfullscreen=""
+        allow="encrypted-media"
       ></iframe>
       <Alert
         severity={info.load === true ? "info" : info.status}

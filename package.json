@@ -25,6 +25,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "crypto-js": "^4.1.1",
     "jsonwebtoken": "^8.5.1",
     "next": "latest",
     "prop-types": "latest",

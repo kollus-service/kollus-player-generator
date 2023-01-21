@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 import Checkbox from "@mui/material/Checkbox";
 import LinkIcon from "@mui/icons-material/Link";
 import Accordion from "@mui/material/Accordion";
@@ -41,6 +41,7 @@ export default function VodPanel() {
     payload: "",
     mckey: "",
     src: "",
+    uploadKey: "",
     inkaAccessKey: "",
     inkaSiteKey: "",
     inkaSiteID: "",
@@ -77,9 +78,10 @@ export default function VodPanel() {
     };
 
     if (multiDrmOption === true) {
-      newInfo.inkaAccessKey = JSON.parse(values.inkaAccessKey);
-      newInfo.inkaSiteKey = JSON.parse(values.inkaSiteKey);
-      newInfo.inkaSiteID = JSON.parse(values.inkaSiteID);
+      newInfo.uploadKey = values.uploadKey;
+      newInfo.inkaAccessKey = values.inkaAccessKey;
+      newInfo.inkaSiteKey = values.inkaSiteKey;
+      newInfo.inkaSiteID = values.inkaSiteID;
     }
 
     if (advancedOption === true) {
@@ -98,11 +100,27 @@ export default function VodPanel() {
     setValues((prevState) => {
       return {
         ...prevState,
-        vodSecurity: localStorage.getItem("vodSecurity")?localStorage.getItem("vodSecurity"):"",
-        vodCustomer: localStorage.getItem("vodCustomer")?localStorage.getItem("vodCustomer"):"",
-        inkaAccessKey: localStorage.getItem("inkaAccessKey")?localStorage.getItem("inkaAccessKey"):"",
-        inkaSiteKey: localStorage.getItem("inkaSiteKey")?localStorage.getItem("inkaSiteKey"):"",
-        inkaSiteID: localStorage.getItem("inkaSiteID")?localStorage.getItem("inkaSiteID"):"",
+        vodSecurity: localStorage.getItem("vodSecurity")
+          ? localStorage.getItem("vodSecurity")
+          : "",
+        vodCustomer: localStorage.getItem("vodCustomer")
+          ? localStorage.getItem("vodCustomer")
+          : "",
+        mckey: localStorage.getItem("mckey")
+          ? localStorage.getItem("mckey")
+          : "",
+        uploadKey: localStorage.getItem("uploadKey")
+          ? localStorage.getItem("uploadKey")
+          : "",
+        inkaAccessKey: localStorage.getItem("inkaAccessKey")
+          ? localStorage.getItem("inkaAccessKey")
+          : "",
+        inkaSiteKey: localStorage.getItem("inkaSiteKey")
+          ? localStorage.getItem("inkaSiteKey")
+          : "",
+        inkaSiteID: localStorage.getItem("inkaSiteID")
+          ? localStorage.getItem("inkaSiteID")
+          : "",
         payload: JSON.stringify(payload, null, 2),
       };
     });
@@ -126,7 +144,7 @@ export default function VodPanel() {
 
   const initialIframe = (source) => {
     setIframe(
-      `<iframe id="kollus-player" className="kollus-player" width="640" height="480" src="${source}" frameBorder="0" allowFullScreen></iframe>`
+      `<iframe id="kollus-player" className="kollus-player" width="640" height="480" src="${source}" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" allow="encrypted-media"></iframe>`
     );
   };
 
@@ -135,7 +153,7 @@ export default function VodPanel() {
     initialIframe(src);
     initialContentLink(src);
     localStorage.setItem("payload", JSON.stringify(payload));
-  }, [src]);
+  }, [src, payload]);
 
   return (
     <>
@@ -187,44 +205,45 @@ export default function VodPanel() {
         </FormControl>
         <TextField
           id="mckey"
-          label={advancedOption?"Payload 사용 중":"Media Contents Key"}
-          value={advancedOption === true?"":values.mckey}
+          label={advancedOption ? "Payload 사용 중" : "Media Contents Key"}
+          value={advancedOption === false ? values.mckey : ""}
           onChange={changeHandler("mckey")}
           disabled={advancedOption === true}
         />
 
-        {multiDrmOption===true && 
-          (<>
-              <Divider>Multi DRM</Divider>
+        {multiDrmOption === true && (
+          <>
+            <Divider>Multi DRM</Divider>
+            <TextField
+              id="uploadKey"
+              label={advancedOption ? "Payload 사용 중" : "Upload Key"}
+              value={advancedOption === false ? values.uploadKey : ""}
+              onChange={changeHandler("uploadKey")}
+              disabled={advancedOption === true}
+            />
             <TextField
               id="inkaAccessKey"
-              label={advancedOption?"Payload 사용 중":"INKA Access Key"}
-              value={advancedOption === false?values.inkaAccessKey:""}
+              label={advancedOption ? "Payload 사용 중" : "INKA Access Key"}
+              value={advancedOption === false ? values.inkaAccessKey : ""}
               onChange={changeHandler("inkaAccessKey")}
               disabled={advancedOption === true}
             />
-          </>)
-        }
-
-        {multiDrmOption===true && 
-          (<TextField
-            id="inkaSiteKey"
-            label={advancedOption?"Payload 사용 중":"INKA Site Key"}
-            value={advancedOption === false?values.inkaSiteKey:""}
-            onChange={changeHandler("inkaSiteKey")}
-            disabled={advancedOption === true}
-          />)
-        }
-
-        {multiDrmOption===true && 
-          (<TextField
-            id="inkaSiteID"
-            label={advancedOption?"Payload 사용 중":"INKA Site ID"}
-            value={advancedOption === false?values.inkaSiteID:""}
-            onChange={changeHandler("inkaSiteID")}
-            disabled={advancedOption === true}
-          />)
-        }
+            <TextField
+              id="inkaSiteKey"
+              label={advancedOption ? "Payload 사용 중" : "INKA Site Key"}
+              value={advancedOption === false ? values.inkaSiteKey : ""}
+              onChange={changeHandler("inkaSiteKey")}
+              disabled={advancedOption === true}
+            />
+            <TextField
+              id="inkaSiteID"
+              label={advancedOption ? "Payload 사용 중" : "INKA Site ID"}
+              value={advancedOption === false ? values.inkaSiteID : ""}
+              onChange={changeHandler("inkaSiteID")}
+              disabled={advancedOption === true}
+            />
+          </>
+        )}
         <Button
           variant="contained"
           onClick={setContentHandler}
@@ -286,7 +305,7 @@ export default function VodPanel() {
             <TextareaAutosize
               id="payload"
               label="payload"
-              defaultValue={JSON.stringify(payload, null, 2)}
+              value={values.payload}
               onChange={changeHandler("payload")}
               rows={6}
               variant="filled"

@@ -100,17 +100,17 @@ export default function TabMenu(props) {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs value={value} onChange={handleChange}>
             <Tab label="VOD" {...a11yProps(0)} />
-            <Tab label="LIVE (작업 예정)" {...a11yProps(1)} />
-            <Tab label="Supported" {...a11yProps(2)} />
+            {/* <Tab label="LIVE (작업 예정)" {...a11yProps(1)} /> */}
+            <Tab label="Supported" {...a11yProps(1)} />
           </Tabs>
         </Box>
         <TabPanel component="div" value={value} index={0}>
           <VodPanel/>
         </TabPanel>
-        <TabPanel component="div" value={value} index={1}>
+        {/* <TabPanel component="div" value={value} index={1}>
           작업 예정
-        </TabPanel>
-        <TabPanel component="div" value={value} index={2}>
+        </TabPanel> */}
+        <TabPanel component="div" value={value} index={1}>
           <div>{multidrmCheck}</div>
           <div>{typeCheck}</div>
         </TabPanel>
