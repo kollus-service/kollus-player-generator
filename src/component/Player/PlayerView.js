@@ -60,9 +60,9 @@ const PlayerView = (props) => {
         height="480"
         src={src}
         frameBorder="0"
-        allowFullScreen=""
-        webkitallowfullscreen=""
-        mozallowfullscreen=""
+        allowFullScreen
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
         allow="encrypted-media"
       ></iframe>
       <Alert

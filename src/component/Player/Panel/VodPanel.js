@@ -142,9 +142,9 @@ export default function VodPanel() {
     });
   };
 
-  const initialIframe = (source) => {
+  const initialIframe = (src) => {
     setIframe(
-      `<iframe id="kollus-player" className="kollus-player" width="640" height="480" src="${source}" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" allow="encrypted-media"></iframe>`
+      `<iframe id="kollus-player" className="kollus-player" width="640" height="480" src="${src}" frameBorder="0" allowFullScreen webkitallowfullscreen="true" mozallowfullscreen="true" allow="encrypted-media"></iframe>`
     );
   };
 
