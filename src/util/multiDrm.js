@@ -89,7 +89,7 @@ const createInkaPayload = async (info) => {
   };
 
   inka_payload = JSON.stringify(inka_payload);
-  inka_payload = btoa(inka_payload);
+  inka_payload = CryptoJS.enc.Base64.stringify((CryptoJS.enc.Utf8.parse(inka_payload)));
 
   return inka_payload;
 };
