@@ -70,12 +70,10 @@ const createInkaPayload = async (info) => {
   };
 
   token = JSON.stringify(token);
-  token = atob(btoa(
-    CryptoJS.AES.encrypt(token, CryptoJS.enc.Utf8.parse(info.inkaSiteKey), {
+  token = CryptoJS.AES.encrypt(token, CryptoJS.enc.Utf8.parse(info.inkaSiteKey), {
       iv: CryptoJS.enc.Utf8.parse("0123456789abcdef"),
       mode: CryptoJS.mode.CBC,
-    })
-  ));
+    }).ciphertext.toString(CryptoJS.enc.Base64);
 
   let hash = `${info.inkaAccessKey}${drmType}${info.inkaSiteID}${info.cuid}${info.uploadKey}${token}${timestamp}`;
   hash = CryptoJS.SHA256(hash).toString(CryptoJS.enc.Base64);
