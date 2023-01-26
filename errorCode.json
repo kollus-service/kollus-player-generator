@@ -1,1526 +1,1520 @@
 [
   {
     "type": "NO_INIT",
-    "code": "-19",
+    "code": 19,
     "description": "초기화 하지 않은 상태에서 해당 기능이 호출된 경우",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "BAD_VALUE",
-    "code": "-22",
+    "code": 22,
     "description": "URL이 NULL이거나 해당 MediaContentKey로 다운로드된 컨텐츠가 없는 경우",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "INVALID_OPERATION",
-    "code": "-38",
+    "code": 38,
     "description": "인자 오류",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_CODEC_TIMED_OUT",
-    "code": "-110",
+    "code": 110,
     "description": "H/W Codec(OMX)이상동작",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_IO",
-    "code": "-1004",
+    "code": 1004,
     "description": "데이터 사용 오류",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_MALFORMED",
-    "code": "-1007",
+    "code": 1007,
     "description": "URL이 http://나 https://로 시작하지 않는 경우",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다."
   },
   {
     "type": "ERROR_UNSUPPORTED",
-    "code": "-1010",
+    "code": 1010,
     "description": "미지원 컨텐츠",
-    "message_ko": "서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNSUPPORTED_DEVICE",
-    "code": "-1015",
+    "code": 1015,
     "description": "미지원 디바이스",
-    "message_ko": "지원되지 않는 컨텐츠입니다."
+    "message": "지원되지 않는 컨텐츠입니다."
   },
   {
     "type": "ERROR_CODEC_INIT",
-    "code": "-1102",
+    "code": 1102,
     "description": "HW Codec 연동이 실패 시 서버로 에러 수집을 위해 있는 값으로 UI상으로는 Notify하지 않음",
-    "message_ko": "서비스 제공 업체에 문의해주시기 바랍니다."
+    "message": "서비스 제공 업체에 문의해주시기 바랍니다."
   },
   {
     "type": "ERROR_CODEC_DECODE",
-    "code": "-1103",
+    "code": 1103,
     "description": "디코딩 실패 - 고객친화 문구로 대체함",
-    "message_ko": "지원되지 않는 단말기입니다. 서비스 제공 업체에 문의해주시기 바랍니다."
+    "message": "지원되지 않는 단말기입니다. 서비스 제공 업체에 문의해주시기 바랍니다."
   },
   {
     "type": "ERROR_SERVER_BLACK_OUT",
-    "code": "-1105",
+    "code": 1105,
     "description": "블랙아웃",
-    "message_ko": "코덱 초기화에 실패하였습니다. 다시 시도해주시기 바랍니다."
+    "message": "코덱 초기화에 실패하였습니다. 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_DRM_NO_LICENSE",
-    "code": "-2001",
+    "code": 2001,
     "description": "DRM 프록시 서버 주소가 없거나 인증 실패 시",
-    "message_ko": "시스템 초기화로 재시도가 필요합니다."
+    "message": "시스템 초기화로 재시도가 필요합니다."
   },
   {
     "type": "ERROR_NETWORK_CON_BASE",
-    "code": "-4000",
+    "code": 4000,
     "description": "네트워크 연결 오류 기본 값 아래에 없는 코드는 Curl 오류에 기본 값을 더한 코드임",
-    "message_ko": "현재 방송 중이 아니거나, 방송 신호가 정상적으로 수신되지 않습니다. 잠시 후, 다시 시도해주세요."
+    "message": "현재 방송 중이 아니거나, 방송 신호가 정상적으로 수신되지 않습니다. 잠시 후, 다시 시도해주세요."
   },
   {
     "type": "ERROR_NETWORK_CON_SOCKET_IO",
-    "code": "-4103",
+    "code": 4103,
     "description": "네트워크 연결 시 ERROR_NETWORK_CON_TIMEOUT이외의 오류",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_NETWORK_CON_TIMEOUT",
-    "code": "-4105",
+    "code": 4105,
     "description": "네트워크 연결 타임 아웃",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_NETWORK_SEND_BASE",
-    "code": "-5000",
+    "code": 5000,
     "description": "네트워크 쓰기 오류 기본 값",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_NETWORK_SEND_SOCKET_IO",
-    "code": "-5005",
+    "code": 5005,
     "description": "네트워크 쓰기 오류",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_NETWORK_RECV_BASE",
-    "code": "-6000",
+    "code": 6000,
     "description": "네트워크 읽기 오류 기본 값",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_NETWORK_RECV_SOCKET_IO",
-    "code": "-6005",
+    "code": 6005,
     "description": "네트워크 읽기 오류",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "UNKNOWN_ERROR",
     "code": "0x80000000",
     "description": "기타 여러가지 오류",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_UNDEFINED_CODE",
     "code": "기타",
     "description": "기타 에러 메세지를 통합하여 보여주는 메세지",
-    "message_ko": "일시적인 오류가 발생하였습니다. 잠시 후 다시 시도해 주세요."
+    "message": "일시적인 오류가 발생하였습니다. 잠시 후 다시 시도해 주세요."
   },
   {
     "type": "ERROR_NOT_RESPONSE_AGENT",
-    "code": -1000,
+    "code": 1000,
     "description": "Kollus Agent로 요청시 응답이 3초동안 없는 경우",
-    "message_ko": "Kollus Agent가 실행되어 있지 않거나 응답이 없습니다.\n잠시 후 재시도 해 주세요."
+    "message": "Kollus Agent가 실행되어 있지 않거나 응답이 없습니다.\n잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_UNSUPPORTED_HTML5_VIDEO",
-    "code": -1001,
+    "code": 1001,
     "description": "HTML5가 지원되지 않을 경우.",
-    "message_ko": "현재 사용하시는 브라우저 환경에서 컨텐츠를 재생하실 수 없습니다.\nInternet Explorer 9 버전 이상으로 업그레이드 해주시거나, Chrome, Firefox 등의 브라우저를 통해 접속해주시기 바랍니다."
+    "message": "현재 사용하시는 브라우저 환경에서 컨텐츠를 재생하실 수 없습니다.\nInternet Explorer 9 버전 이상으로 업그레이드 해주시거나, Chrome, Firefox 등의 브라우저를 통해 접속해주시기 바랍니다."
   },
   {
     "type": "ERROR_CAPUTRE",
-    "code": -1002,
+    "code": 1002,
     "description": "캡쳐 프로그램이 감지됨",
-    "message_ko": "화면 녹화 또는 캡쳐 프로그램이 감지되었습니다. 해당 프로그램을 종료하신 후 다시 시도해주시기 바랍니다."
+    "message": "화면 녹화 또는 캡쳐 프로그램이 감지되었습니다. 해당 프로그램을 종료하신 후 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_TVOUT",
-    "code": -1003,
+    "code": 1003,
     "description": "TV OUT 감지(HDMI 감지 또는 Device 체크)",
-    "message_ko": "외부 디바이스로의 출력 시도가 감지되어 재생을 중단합니다. HDMI 등의 외부 연결을 해제하신 후 다시 시도해주시기 바랍니다."
+    "message": "외부 디바이스로의 출력 시도가 감지되어 재생을 중단합니다. HDMI 등의 외부 연결을 해제하신 후 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_CHROME_EXTENTION_CAPTURE",
-    "code": -1004,
+    "code": 1004,
     "description": "크롬 확장 프로그램 중에 Video Recoder 설치 된 경우",
-    "message_ko": "크롬 확장 프로그램에 화면 녹화 또는 캡쳐 프로그램이 감지되었습니다. 해당 프로그램을 제거 후 다시 시도해주시기 바랍니다."
+    "message": "크롬 확장 프로그램에 화면 녹화 또는 캡쳐 프로그램이 감지되었습니다. 해당 프로그램을 제거 후 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_REMOTE_CONNECT",
-    "code": -1005,
+    "code": 1005,
     "description": "원격 연결이 되어 있는 경우",
-    "message_ko": "원격 연결 프로그램이 감지되었습니다. 해당 프로그램을 종료하신 후 다시 시도해주시기 바랍니다."
+    "message": "원격 연결 프로그램이 감지되었습니다. 해당 프로그램을 종료하신 후 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_SCRIPT",
-    "code": -1011,
+    "code": 1011,
     "description": "security script 오류",
-    "message_ko": "인증 처리 과정에서 일시적인 오류가 발생하였습니다. 잠시 후 새로고침하여 다시 재생 시도해주세요."
+    "message": "인증 처리 과정에서 일시적인 오류가 발생하였습니다. 잠시 후 새로고침하여 다시 재생 시도해주세요."
   },
   {
     "type": "ERROR_DUPLICATE_APP",
-    "code": -1012,
+    "code": 1012,
     "description": "플레이어가 동시에 두개 이상 재생 시도 되는 경우",
-    "message_ko": "플레이어를 동시에 하나 이상 실행할 수 없으므로 기존 재생을 종료합니다."
+    "message": "플레이어를 동시에 하나 이상 실행할 수 없으므로 기존 재생을 종료합니다."
   },
   {
     "type": "ERROR_CONTENTRAGE",
-    "code": -1013,
+    "code": 1013,
     "description": "서버의 응답이 지연되는 경우 발생.",
-    "message_ko": "기본 플레이어(HTML5)를 통한 영상 재생이 원활하지 않습니다."
+    "message": "기본 플레이어(HTML5)를 통한 영상 재생이 원활하지 않습니다."
   },
   {
     "type": "",
     "code": "",
     "description": "허가되지않은 방법으로 다운로드 요청시 발생",
-    "message_ko": "아래의 확인 버튼을 클릭하시어 전용 플레이어를 통해 재생해주시기 바랍니다."
+    "message": "아래의 확인 버튼을 클릭하시어 전용 플레이어를 통해 재생해주시기 바랍니다."
   },
   {
     "type": "ERROR_USERAGENT",
-    "code": -1014,
+    "code": 1014,
     "description": "user-agent가 동일하지 않을때",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_HTML5_VIDEO_PLAY",
-    "code": -1016,
+    "code": 1016,
     "description": "HTML5Player가 지원되지 않을 경우.",
-    "message_ko": "본 컨텐츠는 전용 플레이어를 통해 재생됩니다. 잠시만 기다려주세요."
+    "message": "본 컨텐츠는 전용 플레이어를 통해 재생됩니다. 잠시만 기다려주세요."
   },
   {
     "type": "ERROR_DATA_READ",
-    "code": -1017,
+    "code": 1017,
     "description": "데이터 읽기 오류",
-    "message_ko": "영상 데이터를 읽어오지 못했습니다. 잠시 후 새로고침하여 다시 재생 시도해주세요."
+    "message": "영상 데이터를 읽어오지 못했습니다. 잠시 후 새로고침하여 다시 재생 시도해주세요."
   },
   {
     "type": "ERROR_NETWORK_DISCONNECTED",
-    "code": -1018,
+    "code": 1018,
     "description": "재생중 Network가 끊겨서 Session이 닫히는 경우",
-    "message_ko": "세션 연결이 끊어졌습니다. 브라우저를 새로고침 해주시기 바랍니다."
+    "message": "세션 연결이 끊어졌습니다. 브라우저를 새로고침 해주시기 바랍니다."
   },
   {
     "type": "ERROR_VIRTUALMACHINE",
-    "code": -1019,
+    "code": 1019,
     "description": "가상 머신에서 재생시",
-    "message_ko": "가상 머신에서는 영상을 재생하실 수 없습니다."
+    "message": "가상 머신에서는 영상을 재생하실 수 없습니다."
   },
   {
     "type": "ERROR_BUFFERING_CONTENT",
-    "code": -1020,
+    "code": 1020,
     "description": "처음 재생시 버퍼링이 계속 발생해서 재생이 불가한 경우",
-    "message_ko": "현재 브라우저 환경에서는 영상을 원활하게 재생하실 수 없습니다. 다른 브라우저에서 다시 시도해주시기 바랍니다."
+    "message": "현재 브라우저 환경에서는 영상을 원활하게 재생하실 수 없습니다. 다른 브라우저에서 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_SCRIPT_REF",
-    "code": -1022,
+    "code": 1022,
     "description": "connect count가 2개 이상이고 15초 동안 동시에 접속 할 때 오류",
-    "message_ko": "비정상적인 방법을 통하여 다운로드 하실 수 없습니다."
+    "message": "비정상적인 방법을 통하여 다운로드 하실 수 없습니다."
   },
   {
     "type": "ERROR_DISABLED_BOOKMARK_CONTENT",
-    "code": -2100,
+    "code": 2100,
     "description": "북마크가 없는 컨텐트에서 북마크 조작 명령을 실행한 경우",
-    "message_ko": "북마크가 포함되지 않은 컨텐츠입니다."
+    "message": "북마크가 포함되지 않은 컨텐츠입니다."
   },
   {
     "type": "ERROR_CONTENT_NOT_PREPARED",
-    "code": -2101,
+    "code": 2101,
     "description": "컨텐트 재생준비가 완료되지 않은 상태에서 컨텐츠 재생 시도",
-    "message_ko": "컨텐츠 재생 준비가 완료되지 않았습니다."
+    "message": "컨텐츠 재생 준비가 완료되지 않았습니다."
   },
   {
     "type": "ERROR_COULD_NOT_SCROLL_MODE",
-    "code": -2102,
+    "code": 2102,
     "description": "화면을 이동할 수 있는 컨텐트 모드가 아님",
-    "message_ko": "현재 모드에서는 화면을 이동할 수 없습니다."
+    "message": "현재 모드에서는 화면을 이동할 수 없습니다."
   },
   {
     "type": "ERROR_INCORRECT_BUNDLE_ID",
-    "code": -2103,
+    "code": 2103,
     "description": "Bundle-ID가 상이함",
-    "message_ko": "입력된 Bundle ID가 정확하지 않습니다."
+    "message": "입력된 Bundle ID가 정확하지 않습니다."
   },
   {
     "type": "ERROR_EXPIRED_AUTH_DATE",
-    "code": -2104,
+    "code": 2104,
     "description": "SDK 사용기한 만료",
-    "message_ko": "SDK 사용기한이 만료되었습니다."
+    "message": "SDK 사용기한이 만료되었습니다."
   },
   {
     "type": "ERROR_INCORRECT_AUTH_DATE",
-    "code": -2105,
+    "code": 2105,
     "description": "SDK 사용기한 입력포맷이 상이함",
-    "message_ko": "입력된 SDK 사용기한이 정확하지 않습니다."
+    "message": "입력된 SDK 사용기한이 정확하지 않습니다."
   },
   {
     "type": "ERROR_INCORRECT_AUTH_KEY",
-    "code": -2106,
+    "code": 2106,
     "description": "SDK 인증 키가 상이함",
-    "message_ko": "입력된 SDK 인증 키가 정확하지 않습니다."
+    "message": "입력된 SDK 인증 키가 정확하지 않습니다."
   },
   {
     "type": "ERROR_NOT_ENOUGH_AUTH_INFO",
-    "code": -2107,
+    "code": 2107,
     "description": "SDK 인증정보가 모두 입력되지 않았음",
-    "message_ko": "SDK 인증을 위한 정보가 모두 입력되지 않았습니다."
+    "message": "SDK 인증을 위한 정보가 모두 입력되지 않았습니다."
   },
   {
     "type": "ERROR_KOLLUS_STORAGE_IS_EMPTY",
-    "code": -2108,
+    "code": 2108,
     "description": "플레이어에 KollusStorage를 설정하지 않고, 재생을 시도한 경우",
-    "message_ko": "KollusStorage가 설정되지 않았습니다."
+    "message": "KollusStorage가 설정되지 않았습니다."
   },
   {
     "type": "ERROR_CONTENT_URL_IS_EMPTY",
-    "code": -2109,
+    "code": 2109,
     "description": "재생할 컨텐츠의 URL또는 index를 설정하지 않고, 재생을 시도한 경우",
-    "message_ko": "재생할 컨텐츠의 URL이 설정되지 않았습니다."
+    "message": "재생할 컨텐츠의 URL이 설정되지 않았습니다."
   },
   {
     "type": "ERROR_CONTENT_IS_MIRRORING",
-    "code": -2110,
+    "code": 2110,
     "description": "",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_DISCONNECT_PLAY_SESSION",
-    "code": -2111,
+    "code": 2111,
     "description": "내장 플레이어에서 Proxy Server와 세션이 끊어지는 경우",
-    "message_ko": "재생할 수 없습니다. 다시 재생 시도해주세요."
+    "message": "재생할 수 없습니다. 다시 재생 시도해주세요."
   },
   {
     "type": "ERROR_ALREADY_DOWNLOADED",
-    "code": -9000,
+    "code": 9000,
     "description": "다운로드 완료된 파일을 다운로드 시도한 경우",
-    "message_ko": "이미 다운로드된 컨텐츠입니다."
+    "message": "이미 다운로드된 컨텐츠입니다."
   },
   {
     "type": "ERROR_API_CONNECTION",
     "code": 3000,
     "description": "API 호출에 실패할 경우",
-    "message_ko": "API 호출에 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "API 호출에 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "MEDIA_ERR_ABORTED",
     "code": 3001,
     "description": "비디오 재생을 취소한 경우",
-    "message_ko": "비디오 재생을 취소했습니다."
+    "message": "비디오 재생을 취소했습니다."
   },
   {
     "type": "MEDIA_ERR_NETWORK",
     "code": 3002,
     "description": "네트워크 오류",
-    "message_ko": "네트워크 오류로 인하여 비디오 일부를 다운로드하지 못 했습니다."
+    "message": "네트워크 오류로 인하여 비디오 일부를 다운로드하지 못 했습니다."
   },
   {
     "type": "MEDIA_ERR_DECODE",
     "code": 3003,
     "description": "지원되지 않는 형식의 미디어 요청",
-    "message_ko": "비디오를 로드할 수 없습니다. 서버 혹은 네트워크 오류 때문이거나 지원되지 않는 형식 때문일 수 있습니다."
+    "message": "비디오를 로드할 수 없습니다. 서버 혹은 네트워크 오류 때문이거나 지원되지 않는 형식 때문일 수 있습니다."
   },
   {
     "type": "MEDIA_ERR_SRC_NOT_SUPPORTED",
     "code": 3004,
     "description": "브라우저 미지원",
-    "message_ko": "비디오 재생이 취소됐습니다. 비디오가 손상되었거나 비디오가 사용하는 기능을 브라우저에서 지원하지 않는 것 같습니다."
+    "message": "비디오 재생이 취소됐습니다. 비디오가 손상되었거나 비디오가 사용하는 기능을 브라우저에서 지원하지 않는 것 같습니다."
   },
   {
     "type": "MEDIA_ERR_SRC_NOT_SUPPORTED",
     "code": 3005,
     "description": "브라우저 미지원",
-    "message_ko": "비디오에 호환되지 않는 소스가 있습니다."
+    "message": "비디오에 호환되지 않는 소스가 있습니다."
   },
   {
     "type": "ERROR_API_NOT_SUPPORT_BROWSER",
     "code": 3006,
     "description": "API 호출 브라우저(<=IE9) 에러",
-    "message_ko": "북마크 기능은 인터넷 익스플로러 10 이상부터 지원합니다."
+    "message": "북마크 기능은 인터넷 익스플로러 10 이상부터 지원합니다."
   },
   {
     "type": "ERROR_CAPTURE_NOT_SUPPORT_BROWSER",
     "code": 3007,
     "description": "화면캡쳐 미지원 브라우저",
-    "message_ko": "화면캡쳐 기능은 IE에서는 지원하지 않습니다."
+    "message": "화면캡쳐 기능은 IE에서는 지원하지 않습니다."
   },
   {
     "type": "ERROR_DUPLICATE_PLAYER",
     "code": 3008,
     "description": "KollusPlayer 중복 재생일 경우",
-    "message_ko": "플레이어를 동시에 하나 이상 실행할 수 없으므로 기존 재생을 종료합니다."
+    "message": "플레이어를 동시에 하나 이상 실행할 수 없으므로 기존 재생을 종료합니다."
   },
   {
     "type": "MEDIA_ERR_LIVE_NOT_BROADCASTING",
     "code": 3012,
     "description": "LIVE 재생을 실패한 경우",
-    "message_ko": "현재 방송 중이 아니거나, 방송 신호가 정상적으로 수신되지 않습니다. 잠시 후, 다시 시도해주세요."
+    "message": "현재 방송 중이 아니거나, 방송 신호가 정상적으로 수신되지 않습니다. 잠시 후, 다시 시도해주세요."
   },
   {
     "type": "ERROR_DUPLICATION_BLOCK_OR_EXPIRED_TIME_MEDIA_KEY",
     "code": 3013,
     "description": "중복재생 또는 재생허용시간 초과 차단",
-    "message_ko": "ID중복 또는 재생허용시간 초과로 재생을 중단합니다. 페이지 새로고침 후 재시도해 주세요."
+    "message": "ID중복 또는 재생허용시간 초과로 재생을 중단합니다. 페이지 새로고침 후 재시도해 주세요."
   },
   {
     "type": "MEDIA_ERR_SRC_NOT_SUPPORTED",
     "code": 3014,
     "description": "브라우저 미지원",
-    "message_ko": "비디오 재생이 취소됐습니다. 비디오가 손상되었거나 비디오가 사용하는 기능을 브라우저에서 지원하지 않는 것 같습니다."
+    "message": "비디오 재생이 취소됐습니다. 비디오가 손상되었거나 비디오가 사용하는 기능을 브라우저에서 지원하지 않는 것 같습니다."
   },
   {
     "type": "ERROR_CONCURRENTLY_VIEWER_LIMIT",
     "code": 3015,
     "description": "동시 시청자 수 제한",
-    "message_ko": "시청 가능 인원을 초과하여 재생을 중단합니다."
+    "message": "시청 가능 인원을 초과하여 재생을 중단합니다."
   },
   {
     "type": "ERROR_INVALID_MEDIA_CONTENT_KEY",
-    "code": -4001,
+    "code": 4001,
     "description": "미디어 컨텐츠 키가 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_SECURITY_KEY",
-    "code": -4002,
+    "code": 4002,
     "description": "보안 키가 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_CHANNEL_KEY",
-    "code": -4003,
+    "code": 4003,
     "description": "채널 키가 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_USER_KEY",
-    "code": -4004,
+    "code": 4004,
     "description": "사용자 키가 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_TRANSCODING_FILE_PATH",
-    "code": -4005,
+    "code": 4005,
     "description": "동영상 파일의 물리 경로가 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_ALIAS_KEY",
-    "code": -4006,
+    "code": 4006,
     "description": "알리아스 키가 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_JWT",
-    "code": -4007,
+    "code": 4007,
     "description": "JSON 토큰이 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INVALID_MEDIA_TOKEN",
-    "code": -4008,
+    "code": 4008,
     "description": "미디어 토큰이 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_TRANSCODING_FILE",
-    "code": -4011,
+    "code": 4011,
     "description": "동영상 파일이 존재하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_MEDIA_CONTENT",
-    "code": -4012,
+    "code": 4012,
     "description": "동영상이 존재하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_CONTENT_OWNER",
-    "code": -4013,
+    "code": 4013,
     "description": "컨텐츠 공급자가 존재하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_CONTENT_DISTRIBUTOR",
-    "code": -4014,
+    "code": 4014,
     "description": "컨텐츠 공급자가 존재하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_CHANNEL",
-    "code": -4015,
+    "code": 4015,
     "description": "채널이 존재하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_PAYMENT",
-    "code": -4016,
+    "code": 4016,
     "description": "과금 이력이 존재하지 않아 서비스가 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_DEFAULT_MAIN_SITE",
-    "code": -4019,
+    "code": 4019,
     "description": "서비스 제공자 설정에 오류가 발생하였습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NO_MAIN_MEDIA_CONTENT",
-    "code": -4020,
+    "code": 4020,
     "description": "인트로 요청 내에 본 컨텐츠가 존재하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAVAILABLE_TRANSCODING_FILE",
-    "code": -4021,
+    "code": 4021,
     "description": "동영상 파일이 서비스 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAVAILABLE_MEDIA_CONTENT",
-    "code": -4022,
+    "code": 4022,
     "description": "동영상이 서비스 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAVAILABLE_CONTENT_OWNER",
-    "code": -4023,
+    "code": 4023,
     "description": "컨텐츠 공급자가 서비스 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAVAILABLE_CONTENT_DISTRIBUTOR",
-    "code": -4024,
+    "code": 4024,
     "description": "컨텐츠 공급자가 서비스 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAVAILABLE_CHANNEL",
-    "code": -4025,
+    "code": 4025,
     "description": "채널이 서비스 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAVAILABLE_CHANNEL_DISTRIBUTION",
-    "code": -4026,
+    "code": 4026,
     "description": "위임된 채널이 서비스 중지되었습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NOT_ALLOWED_REFERER",
-    "code": -4031,
+    "code": 4031,
     "description": "이 동영상은 제한된 도메인에서만 재생되도록 설정되었습니다.",
-    "message_ko": "본 컨텐츠는 허용되지 않은 도메인에서 재생하실 수 없습니다."
+    "message": "본 컨텐츠는 허용되지 않은 도메인에서 재생하실 수 없습니다."
   },
   {
     "type": "ERROR_NOT_ALLOWED_ACCESS_FOR_BLOCKING_CAPTURE",
-    "code": -4032,
+    "code": 4032,
     "description": "귀하는 무단 캡쳐 시도로 인해 서비스 담당자로부터 컨텐츠 접근이 차단된 상태입니다.자세한 내용은 담당자에게 문의 주시기 바랍니다.",
-    "message_ko": "귀하는 무단 캡쳐 시도로 인해 서비스 담당자로부터 컨텐츠 접근이 차단된 상태입니다. 자세한 내용은 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "귀하는 무단 캡쳐 시도로 인해 서비스 담당자로부터 컨텐츠 접근이 차단된 상태입니다. 자세한 내용은 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NOT_PUBLIC_SHARED_CHANNEL",
-    "code": -4081,
+    "code": 4081,
     "description": "공개 컨텐츠가 아닙니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_MISMATCH_USER_KEY",
-    "code": -4082,
+    "code": 4082,
     "description": "사용자 키가 설정된 것과 일치하지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_ACCESS_WITHOUT_MEDIA_CONTENT_KEY",
-    "code": -4083,
+    "code": 4083,
     "description": "재생 요청이 올바르지 않습니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NOT_SUPPORT_DEVICE",
-    "code": -4084,
+    "code": 4084,
     "description": "이 동영상은 사용자의 기기에서 재생할 수 없습니다.",
-    "message_ko": "본 디바이스에서 재생할 수 없는 컨텐츠입니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "본 디바이스에서 재생할 수 없는 컨텐츠입니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_TOKEN_EXPIRED",
-    "code": -4085,
+    "code": 4085,
     "description": "재생토큰이 만료되었습니다. 다시 시도하여 주십시요.",
-    "message_ko": "재생 가능한 유효시간이 지났습니다. 다시 시도하여 주시기 바랍니다."
+    "message": "재생 가능한 유효시간이 지났습니다. 다시 시도하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_LOAD_SKIN_TEMPLETE",
     "code": 4100,
     "description": "SkinTemplete SWF 로드 에러.",
-    "message_ko": "Skin Template을 불러오지 못했습니다."
+    "message": "Skin Template을 불러오지 못했습니다."
   },
   {
     "type": "ERROR_LOAD_SETTING_PANNEL",
     "code": 4101,
     "description": "SettingPannel SWF 로드 에러.",
-    "message_ko": "Setting Pannel을 불러오지 못했습니다."
+    "message": "Setting Pannel을 불러오지 못했습니다."
   },
   {
     "type": "",
     "code": 4012,
     "description": "VOD 재생을 실패한 경우",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "",
     "code": 4013,
     "description": "LIVE 재생을 실패한 경우",
-    "message_ko": "현재 방송 중이 아니거나, 방송 신호가 정상적으로 수신되지 않습니다. 다시 시도해 주세요."
+    "message": "현재 방송 중이 아니거나, 방송 신호가 정상적으로 수신되지 않습니다. 다시 시도해 주세요."
   },
   {
     "type": "ERROR_MULTI_DRM_EXPIRED",
-    "code": -7000,
+    "code": 7000,
     "description": "재생중 컨텐츠의 사용기간이 만료된 경우",
-    "message_ko": "허용된 재생 시간이 초과되어 재생을 종료합니다."
+    "message": "허용된 재생 시간이 초과되어 재생을 종료합니다."
   },
   {
     "type": "ERROR_INVALID_CRYPTO_KEY",
-    "code": -7001,
+    "code": 7001,
     "description": "컨텐츠의 Crypto Key가 맞지 않는 경우",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_MULTI_DRM_EXPIRED_DOWNLOAD",
-    "code": -7002,
+    "code": 7002,
     "description": "다운로드 컨텐츠의 재생 허용기간이 만료된 경우",
-    "message_ko": "재생기간이 만료된 컨텐츠 입니다. 삭제 후 다시 다운로드 해 주세요."
+    "message": "재생기간이 만료된 컨텐츠 입니다. 삭제 후 다시 다운로드 해 주세요."
   },
   {
     "type": "ERROR_MULTI_DRM_OPERATION_TIMEDOUT",
-    "code": -7028,
+    "code": 7028,
     "description": "서버 연결중에 일정시간 동안 응답이 없는 경우",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_LICENSE_SERVER_CONNECTION_FAIL",
-    "code": -7101,
+    "code": 7101,
     "description": "FPS 라이센스 서버 접속 실패",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_LICENSE_SERVER_NETWORK",
-    "code": -7102,
+    "code": 7102,
     "description": "FPS 라이센스 서버 네트워크 에러",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_ACQUIRE_LICENSE_FAIL_FROME_SERVER",
-    "code": -7103,
+    "code": 7103,
     "description": "FPS 라이센스 서버로부터 얻지 못한 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_LICENSE_DATABASE_PROCESS",
-    "code": -7104,
+    "code": 7104,
     "description": "FPS 데이터베이스 작업중 에러",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_LICENSE_SEVER_INTERNAL_EXCEPTION",
-    "code": -7105,
+    "code": 7105,
     "description": "FPS 라이센스 처리중 알 수 없는 에러",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_FPS_DOWNLOAD_UNKNOWN",
-    "code": -7106,
+    "code": 7106,
     "description": "FPS 다운로드 중 알 수 없는 에러",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_FPS_DOWNLOAD_NETWORK",
-    "code": -7107,
+    "code": 7107,
     "description": "FPS 다운로드 에러",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_FPS_DOWNLOAD_NOT_SUPPORT",
-    "code": -7108,
+    "code": 7108,
     "description": "FPS 다운로드를 지원하지 않는 iOS 버전",
-    "message_ko": "해당 컨텐츠는 iOS 11 이상에서만 다운로드가 가능합니다."
+    "message": "해당 컨텐츠는 iOS 11 이상에서만 다운로드가 가능합니다."
   },
   {
     "type": "ERROR_WIDEVINE_NOT_SUPPORT",
-    "code": -7109,
+    "code": 7109,
     "description": "Widevine을 지원하지 않는 Android 버전 (재생, 다운로드 불가)",
-    "message_ko": "해당 컨텐츠는 Android 5.0 이상에서만 사용이 가능합니다."
+    "message": "해당 컨텐츠는 Android 5.0 이상에서만 사용이 가능합니다."
   },
   {
     "type": "ERROR_BAD_REQUEST",
-    "code": -8400,
+    "code": 8400,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAUTHORIZED_1",
-    "code": -8401,
+    "code": 8401,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_UNAUTHORIZED_2",
-    "code": -8402,
+    "code": 8402,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NOT_EXIST_FILE",
-    "code": -8404,
+    "code": 8404,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_INTERNAL_SERVER",
-    "code": -8500,
+    "code": 8500,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_NOT_IMPLEMENTED",
-    "code": -8501,
+    "code": 8501,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_BAD_GATEWAY",
-    "code": -8502,
+    "code": 8502,
     "description": "",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_SERVICE_UNAVAILABLE",
-    "code": -8503,
+    "code": 8503,
     "description": "",
-    "message_ko": "서버 점검 중입니다. 잠시 후에 다시 시도해주시기 바랍니다."
+    "message": "서버 점검 중입니다. 잠시 후에 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_GATEWAY_TIMEOUT",
-    "code": -8504,
+    "code": 8504,
     "description": "",
-    "message_ko": "서버 점검 중입니다. 잠시 후에 다시 시도해주시기 바랍니다."
+    "message": "서버 점검 중입니다. 잠시 후에 다시 시도해주시기 바랍니다."
   },
   {
     "type": "ERROR_HTTP_VERSION_NOT_SUPPORTED",
-    "code": -8505,
+    "code": 8505,
     "description": "브라우저의 설정에 Http1.1 설정이 되어 있는지 확인 필요합니다.",
-    "message_ko": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
+    "message": "컨텐츠를 불러오는데 실패했습니다. 서비스 제공 업체에 문의하여 주시기 바랍니다."
   },
   {
     "type": "ERROR_REQUEST_URL",
-    "code": -8461,
+    "code": 8461,
     "description": "",
-    "message_ko": "알 수 없는 형식의 URL입니다."
+    "message": "알 수 없는 형식의 URL입니다."
   },
   {
     "type": "ERROR_GET_USER_IP",
-    "code": -8462,
+    "code": 8462,
     "description": "",
-    "message_ko": "사용자의 IP를 확인할 수 없습니다."
+    "message": "사용자의 IP를 확인할 수 없습니다."
   },
   {
     "type": "ERROR_ACCESS_DENIED_FOLDER",
-    "code": -8463,
+    "code": 8463,
     "description": "",
-    "message_ko": "접근 권한이 없는 컨텐츠 또는 폴더입니다."
+    "message": "접근 권한이 없는 컨텐츠 또는 폴더입니다."
   },
   {
     "type": "ERROR_DUPLICATION_BLOCK_PROCESS",
-    "code": -8464,
+    "code": 8464,
     "description": "",
-    "message_ko": "사용 가능한 기기 대수가 초과되었습니다."
+    "message": "사용 가능한 기기 대수가 초과되었습니다."
   },
   {
     "type": "",
     "code": "",
     "description": "",
-    "message_ko": "관리자에게 문의해주세요."
+    "message": "관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_VERIFY_MEDIA_KEY",
-    "code": -8465,
+    "code": 8465,
     "description": "",
-    "message_ko": "미디어 키 오류가 발생했습니다."
+    "message": "미디어 키 오류가 발생했습니다."
   },
   {
     "type": "ERROR_REQEST_URL_BLOCK",
-    "code": -8466,
+    "code": 8466,
     "description": "",
-    "message_ko": "요청한 컨텐츠가 차단되었습니다."
+    "message": "요청한 컨텐츠가 차단되었습니다."
   },
   {
     "type": "ERROR_MEDIA_KEY_TIME_EXPIRE",
-    "code": -8467,
+    "code": 8467,
     "description": "",
-    "message_ko": "미디어 키 유효기간이 만료되었습니다."
+    "message": "미디어 키 유효기간이 만료되었습니다."
   },
   {
     "type": "ERROR_MEDIA_DOMAIN_VALIDATE",
-    "code": -8468,
+    "code": 8468,
     "description": "",
-    "message_ko": "미디어 도메인이 정확하지 않습니다."
+    "message": "미디어 도메인이 정확하지 않습니다."
   },
   {
     "type": "ERROR_HEAVY_REQUEST",
-    "code": -8469,
+    "code": 8469,
     "description": "",
-    "message_ko": "서버 과부하가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 과부하가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_PLYMENT",
-    "code": -8470,
+    "code": 8470,
     "description": "",
-    "message_ko": "과금 오류가 발생했습니다."
+    "message": "과금 오류가 발생했습니다."
   },
   {
     "type": "ERROR_GEO_RESTRICTION",
-    "code": -8471,
+    "code": 8471,
     "description": "",
-    "message_ko": "해당 국가에서 재생할 수 없는 컨텐츠입니다."
+    "message": "해당 국가에서 재생할 수 없는 컨텐츠입니다."
   },
   {
     "type": "ERROR_PREVIEW_ERROR",
-    "code": -8472,
+    "code": 8472,
     "description": "",
-    "message_ko": "미리보기가 실패했습니다."
+    "message": "미리보기가 실패했습니다."
   },
   {
     "type": "ERROR_USER_KEY",
-    "code": -8473,
+    "code": 8473,
     "description": "",
-    "message_ko": "사용자 키 오류가 발생했습니다."
+    "message": "사용자 키 오류가 발생했습니다."
   },
   {
     "type": "ERROR_CONTENT_NOT_PUBLIC_CHANNEL",
-    "code": -8474,
+    "code": 8474,
     "description": "",
-    "message_ko": "공개 컨텐츠가 아닙니다."
+    "message": "공개 컨텐츠가 아닙니다."
   },
   {
     "type": "ERROR_USED_MEDIA_KEY",
-    "code": -8475,
+    "code": 8475,
     "description": "",
-    "message_ko": "미디어 키가 사용중 입니다."
+    "message": "미디어 키가 사용중 입니다."
   },
   {
     "type": "ERROR_MAX_REQUEST_SIZE",
-    "code": -8476,
+    "code": 8476,
     "description": "",
-    "message_ko": "인증 확인 최대 Request 길이를 초과했습니다."
+    "message": "인증 확인 최대 Request 길이를 초과했습니다."
   },
   {
     "type": "ERROR_DIFFERENT_ES_KEY",
-    "code": -8477,
+    "code": 8477,
     "description": "",
-    "message_ko": "비정상적인 요청입니다."
+    "message": "비정상적인 요청입니다."
   },
   {
     "type": "ERROR_ACCESS_DENIED_MEMCACHE_SERVER",
-    "code": -8478,
+    "code": 8478,
     "description": "",
-    "message_ko": "서버에 연결할 수 없습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_DUPLICATION_BLOCK_MEDIA_KEY",
-    "code": -8479,
+    "code": 8479,
     "description": "",
-    "message_ko": "동일한 아이디로 중복 로그인되어 재생을 중단합니다."
+    "message": "동일한 아이디로 중복 로그인되어 재생을 중단합니다."
   },
   {
     "type": "ERROR_NOT_NORMAL_REQUEST_VIDEO_GATEWAY",
-    "code": -8480,
+    "code": 8480,
     "description": "",
-    "message_ko": "정상적인 접근 경로가 아닙니다."
+    "message": "정상적인 접근 경로가 아닙니다."
   },
   {
     "type": "ERROR_EDGE_RADIS_WRITING",
-    "code": -8481,
+    "code": 8481,
     "description": "",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_EDGE_RADIS_READING",
-    "code": -8482,
+    "code": 8482,
     "description": "",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_COULDNT_RESOLVE_HOST",
-    "code": -8006,
+    "code": 8006,
     "description": "서버 HOST 리졸빙 실패시 발생",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_COULDNT_CONNECT",
-    "code": -8007,
+    "code": 8007,
     "description": "서버에 연결 실패시",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_PARTIAL_FILE",
-    "code": -8018,
+    "code": 8018,
     "description": "서버에 요청한 사이즈와 응답으로 받은 데이터의 사이즈가 상이한 경우",
-    "message_ko": "네트워크 환경이 불안정하여 데이터 수신에 실패하였습니다."
+    "message": "네트워크 환경이 불안정하여 데이터 수신에 실패하였습니다."
   },
   {
     "type": "ERROR_CURLE_WRITE_ERROR",
-    "code": -8023,
+    "code": 8023,
     "description": "서버에서 전송받은 데이터를 파일로 저장하기 실패한 경우",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_CURLE_OPERATION_TIMEDOUT",
-    "code": -8028,
+    "code": 8028,
     "description": "서버 연결중에 일정시간 동안 응답이 없는 경우",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_CURLE_RECV_ERROR",
-    "code": -8056,
+    "code": 8056,
     "description": "서버 연결하여 응닫을 받는 도중 실패시",
-    "message_ko": "네트워크 상태를 확인하신 후 재시도 해 주세요."
+    "message": "네트워크 상태를 확인하신 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CREATE_DIRECTORY",
-    "code": -8600,
+    "code": 8600,
     "description": "단말에 컨텐츠를 저장할 디렉토리 생성 실패",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_CREATE_FILE",
-    "code": -8601,
+    "code": 8601,
     "description": "파일 생성 실패",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_SAVE_DATA",
-    "code": -8602,
+    "code": 8602,
     "description": "파일 데이타 저장 실패",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_OPEN_DB",
-    "code": -8603,
+    "code": 8603,
     "description": "DB 파일을 열기 실패",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_CREATE_TABLE",
-    "code": -8604,
+    "code": 8604,
     "description": "DB 테이블 생성 실패",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_SELECT_TABLE",
-    "code": -8605,
+    "code": 8605,
     "description": "DB 테이블 select 실패",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_DELETE_RECORD",
-    "code": -8606,
+    "code": 8606,
     "description": "DB 레코드 삭제 실패",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_INSERT_RECORD",
-    "code": -8607,
+    "code": 8607,
     "description": "DB 레코드 추가 실패",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_OPEN_FILE",
-    "code": -8608,
+    "code": 8608,
     "description": "파일 열기 실패",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_OUT_OF_MEMORY",
-    "code": -8609,
+    "code": 8609,
     "description": "메모리 부족",
-    "message_ko": "메모리가 부족합니다. 사용하지 않는 어플리케이션을 종료후 재시도 해 주세요."
+    "message": "메모리가 부족합니다. 사용하지 않는 어플리케이션을 종료후 재시도 해 주세요."
   },
   {
     "type": "ERROR_READ_FILE",
-    "code": -8610,
+    "code": 8610,
     "description": "파일 읽기 실패",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_WRITE_FILE",
-    "code": -8611,
+    "code": 8611,
     "description": "파일 쓰기 실패",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_PARAM_VALUE",
-    "code": -8613,
+    "code": 8613,
     "description": "엣지 서버로 부터 얻은 컨텐츠 길이가 음수일때 V3 HTML5 Player를 지원하지 않는 브라우저에서 재생시도 시",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_NOT_LOAD",
-    "code": -8614,
+    "code": 8614,
     "description": "사용하고자 하는 컨텐츠에 대해 load 함수를 호출후 사용할 API를 load 전에 호출시",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_CANCEL_DOWNLOAD",
-    "code": -8615,
+    "code": 8615,
     "description": "파일 다운로드 중에 취소시",
-    "message_ko": "일시적인 오류가 발생하였습니다. 잠시 후 다시 시도해 주세요."
+    "message": "일시적인 오류가 발생하였습니다. 잠시 후 다시 시도해 주세요."
   },
   {
     "type": "ERROR_GET_CONTENTS_LENGTH",
-    "code": -8617,
+    "code": 8617,
     "description": "엣지 서버로 부터 얻은 컨텐츠 길이가 음수일때",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_GET_ENCODE_LEVEL",
-    "code": -8618,
+    "code": 8618,
     "description": "엣지 서버로 부터 얻은 컨텐츠 인코딩 레밸 정보가 유효하지 않을때",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_GET_MEDIA_URL",
-    "code": -8619,
+    "code": 8619,
     "description": "엣지 서버에 요청 응답 결과 HTTP 302 코드를 받은 상태에서 LOCATION 해더로 미디어 url을 얻지 못한 경우",
-    "message_ko": "컨텐츠가 존재하지 않습니다."
+    "message": "컨텐츠가 존재하지 않습니다."
   },
   {
     "type": "ERROR_NOT_FOUND_ID",
-    "code": -8621,
+    "code": 8621,
     "description": "스토리지 매니저 API를 존재하지 않는 컨텐츠 ID로 호출시",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_DECODE_HEADER",
-    "code": -8622,
+    "code": 8622,
     "description": "엣지 서버에 요청 응답 결과 XHTTP_ENC_DATA 해더의 데이타를 복호화 실패시",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_STORAGE_FULL",
-    "code": -8623,
+    "code": 8623,
     "description": "기기에 저장할 저장공간 부족시",
-    "message_ko": "저장공간이 부족합니다. 저장공간을 확보 후 재시도 해 주세요."
+    "message": "저장공간이 부족합니다. 저장공간을 확보 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_UPDATE_RECORD",
-    "code": -8624,
+    "code": 8624,
     "description": "DB 레코드 갱신 실패",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_SNAPSHOT_FILENAME",
-    "code": -8626,
+    "code": 8626,
     "description": "비디오 게이트웨이로 Media info 정보 요청후 얻은 스냅샷 url 문자열에서 파일명을 찾지 못함",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_NOT_FOUND_THUMBNAIL_FILENAME",
-    "code": -8627,
+    "code": 8627,
     "description": "비디오 게이트웨이로 Media info 정보 요청후 얻은 썸내일 url 문자열에서 파일명을 찾지 못함",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_NOT_FOUND_RECORD",
-    "code": -8628,
+    "code": 8628,
     "description": "DB 레코드를 찾지 못함",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_NOT_DOWNLOAD_COMPLETE_ALL",
-    "code": -8629,
+    "code": 8629,
     "description": "다운로드 타입의 컨텐츠를 전부 받지 않은 상태에서 재생 시도시",
-    "message_ko": "컨텐츠 다운로드가 완료되지 않았습니다."
+    "message": "컨텐츠 다운로드가 완료되지 않았습니다."
   },
   {
     "type": "ERROR_NOT_DOWNLOAD_TYPE",
-    "code": -8630,
+    "code": 8630,
     "description": "다운로드 타입이 아닌 컨텐츠 ID로 다운로드 관련 스토리지 매니저 API를 호출해서 사용하려는 경우",
-    "message_ko": "다운로드 받으실 수 없는 컨텐츠입니다."
+    "message": "다운로드 받으실 수 없는 컨텐츠입니다."
   },
   {
     "type": "ERROR_ALREADY_DOWNLOADING",
-    "code": -8631,
+    "code": 8631,
     "description": "다운로드 중에 다운로드 요청 api를 호출시",
-    "message_ko": "이미 다운로드 중입니다."
+    "message": "이미 다운로드 중입니다."
   },
   {
     "type": "ERROR_DECRYPT_CONTENT_INFO_LINK",
-    "code": -8632,
+    "code": 8632,
     "description": "비디오 게이트웨이로 Media info 정보 요청후 응답받은 데이타를 복호화 실패시",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_PARSE_CONTENT_INFO_LINK",
-    "code": -8633,
+    "code": 8633,
     "description": "비디오 게이트웨이로 Media info 정보 요청후 응답받은 데이타를 JSON 파싱 실패시",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_DECRYPT_COMPANY_AUTH_INFO",
-    "code": -8634,
+    "code": 8634,
     "description": "DRM 콜백 호출후 응답받은 데이타를 복호화 실패시",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_PARSE_COMPANY_AUTH_INFO",
-    "code": -8635,
+    "code": 8635,
     "description": "DRM 콜백 요청후 응답받은 데이타를 JSON 파싱 실패시",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_NOT_VAILD_COMPANY_AUTH_INFO",
-    "code": -8636,
+    "code": 8636,
     "description": "DRM 콜백 호출(Kind 1)후 응답받은 만료 정보가 적절하지 않은 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_NO_USE_CONTENT_URL",
-    "code": -8637,
+    "code": 8637,
     "description": "/i\"나 \"/si\" 링크가 아닌 url로 컨텐츠를 load 하는 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_NOT_EXIST_DOWNLOADED_CONTENTS",
-    "code": -8638,
+    "code": 8638,
     "description": "다운로드 되기전에 호출 되는 경우 또는 존재하지 않는 경우",
-    "message_ko": "다운로드 된 컨텐츠가 존재하지 않습니다.스트리밍하여 재생하시겠습니까?"
+    "message": "다운로드 된 컨텐츠가 존재하지 않습니다.스트리밍하여 재생하시겠습니까?"
   },
   {
     "type": "ERROR_NOT_EXIST_DOWNLOADED_CONTENTS",
-    "code": -8638,
+    "code": 8638,
     "description": "다운로드 되기전에 호출 되는 경우 또는 존재하지 않는 경우",
-    "message_ko": "다운로드 된 컨텐츠가 존재하지 않습니다. 먼저 다운로드를 받으신 후 컨텐츠를 재생해주시기 바랍니다."
+    "message": "다운로드 된 컨텐츠가 존재하지 않습니다. 먼저 다운로드를 받으신 후 컨텐츠를 재생해주시기 바랍니다."
   },
   {
     "type": "Unknown Error",
-    "code": -8639,
+    "code": 8639,
     "description": "단말기 타입을 설정값이 유효하지 않습니다.",
-    "message_ko": "알 수 없는 오류가 발생했습니다."
+    "message": "알 수 없는 오류가 발생했습니다."
   },
   {
     "type": "ERROR_NOT_VAILD_DEVICE_LEVEL",
-    "code": -8640,
+    "code": 8640,
     "description": "단말기 래밸을 설정값이 유효하지 않습니다.",
-    "message_ko": "알 수 없는 오류가 발생했습니다."
+    "message": "알 수 없는 오류가 발생했습니다."
   },
   {
     "type": "ERROR_INIT_NETWORK_LIBRARY",
-    "code": -8642,
+    "code": 8642,
     "description": "네트웍 라이브러리 초기화 실패",
-    "message_ko": "알 수 없는 오류가 발생했습니다."
+    "message": "알 수 없는 오류가 발생했습니다."
   },
   {
     "type": "ERROR_EXPIRATION_DATE",
-    "code": -8643,
+    "code": 8643,
     "description": "DRM 다운로드 컨텐츠 재생시 유효기간이 지났을 경우",
-    "message_ko": "재생 유효기간(%s)이 지났습니다."
+    "message": "재생 유효기간(%s)이 지났습니다."
   },
   {
     "type": "ERROR_EXPIRATION_COUNT",
-    "code": -8644,
+    "code": 8644,
     "description": "DRM 다운로드 컨텐츠 재생 유효횟수를 모두 소진했을 경우",
-    "message_ko": "재생 유효 회수(%d회)를 모두 소진했습니다. 삭제 후 다시 다운로드 해 주세요."
+    "message": "재생 유효 회수(%d회)를 모두 소진했습니다. 삭제 후 다시 다운로드 해 주세요."
   },
   {
     "type": "ERROR_REQUEST_CONTENT_URL",
-    "code": -8645,
+    "code": 8645,
     "description": "다 받지 않은 다운로드 컨텐츠를 index로 컨텐츠를 load 한 경우",
-    "message_ko": "다운로드가 완료되지 않은 파일입니다. 컨텐츠 제공 페이지에서 다시 다운로드 시 이어받기가 가능합니다."
+    "message": "다운로드가 완료되지 않은 파일입니다. 컨텐츠 제공 페이지에서 다시 다운로드 시 이어받기가 가능합니다."
   },
   {
     "type": "ERROR_NOT_VAILD_CONTENTS_INFO",
-    "code": -8646,
+    "code": 8646,
     "description": "저장된 컨텐츠 관련 정보가 손상되었습니다.",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요. 저장공간이 부족한지 확인해주십시오."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요. 저장공간이 부족한지 확인해주십시오."
   },
   {
     "type": "ERROR_CREATE_NO_MEDIA_FILE",
-    "code": -8647,
+    "code": 8647,
     "description": ".nomedia 파일 생성 실패시",
-    "message_ko": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "파일 접근에 실패했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_NOT_REMOVE_TYPE",
-    "code": -8648,
+    "code": 8648,
     "description": "삭제 가능한 컨텐츠 타입이 아닌 경우",
-    "message_ko": "삭제가 허용되지 않는 컨텐츠입니다."
+    "message": "삭제가 허용되지 않는 컨텐츠입니다."
   },
   {
     "type": "ERROR_DECRYPT",
-    "code": -8649,
+    "code": 8649,
     "description": "kollus 암호화 문자열 복호화 실패시",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_NOT_ALLOW_DOWNLOAD",
-    "code": -8650,
+    "code": 8650,
     "description": "해당 컨텐츠 URL 링크로는 다운로드를 허용하지 않습니다.",
-    "message_ko": "다운로드 받으실 수 없는 컨텐츠입니다."
+    "message": "다운로드 받으실 수 없는 컨텐츠입니다."
   },
   {
     "type": "ERROR_EMPTY_COMPANY_AUTH_INFO",
-    "code": -8651,
+    "code": 8651,
     "description": "DRM 콜백 요청후 응답은 받았지만 수신 데이타가 없는 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_EMPTY_CONTEMT_INFO",
-    "code": -8652,
+    "code": 8652,
     "description": "비디오 게이트웨이로 Media info 정보 요청후 응답은 받았지만 수신 데이타가 없는 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_DOMAIN",
-    "code": -8653,
+    "code": 8653,
     "description": "엣지 서버로 요청시 사용한 URL 도메인이 엣지서버의 응답 정보중 도메인 목록과 일치하는 도메인이 없는 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_NOT_RECEIVE_DOMAIN",
-    "code": -8654,
+    "code": 8654,
     "description": "엣지 서버로 도메인 목록 정보를 받지 못한 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_ABNORMAL_DRM_INFO",
-    "code": -8655,
+    "code": 8655,
     "description": "DRM 컨텐츠 다운로드 전에 DRM 콜백 호출(Kind 1)하고 응답 받은 내용의 result 값이 0(에러)인 경우 (고객사에서 지정한 메시지가 노출될 수 있습니다.)",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_ABNORMAL_DRM_COMPLETE",
-    "code": -8656,
+    "code": 8656,
     "description": "DRM 컨텐츠 다운로드 후에 DRM 콜백 호출(Kind 2)하고 응답 받은 내용의 result 값이 0(에러)인 경우(고객사에서 지정한 메시지가 노출될 수 있습니다.)",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_ABNORMAL_DRM_PLAY",
-    "code": -8657,
+    "code": 8657,
     "description": "DRM 컨텐츠 재생전에 DRM 콜백 호출(Kind 3)하고 응답 받은 내용의 result 값이 0(에러)인 경우 (고객사에서 지정한 메시지가 노출될 수 있습니다.)",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_FORCE_EXPIRED",
-    "code": -8658,
+    "code": 8658,
     "description": "DRM 콜백 서버로 부터 강제 만료된 컨텐츠를 재생하려고 한 경우",
-    "message_ko": "컨텐츠 사용이 제한되었습니다."
+    "message": "컨텐츠 사용이 제한되었습니다."
   },
   {
     "type": "ERROR_NOT_RECEIVE_ENC_DATA",
-    "code": -8659,
+    "code": 8659,
     "description": "엣지 서버로 XHTTP_ENC_DATA 정보를 받지 못한 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_MOBILE_LOGO_FILENAME",
-    "code": -8660,
+    "code": 8660,
     "description": "비디오 게이트웨이로 Media info 정보를 얻은 항목중에 모바일 로고 url 문자열에서 파일명을 찾지 못함",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CANNOT_CALL_API",
-    "code": -8661,
+    "code": 8661,
     "description": "스토리지 매니저 API를 호출할 수 없습니다.(내부 객체를 종료하는 시점)",
-    "message_ko": "API를 호출할 수 없습니다.(내부 객체를 종료하는 시점)"
+    "message": "API를 호출할 수 없습니다.(내부 객체를 종료하는 시점)"
   },
   {
     "type": "ERROR_NOT_FOUND_THUMBNAIL_URL",
-    "code": -8662,
+    "code": 8662,
     "description": "비디오 게이트웨이로 Media info 정보를 얻은 항목중에 썸내일 url이 없는 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_ALTER_TABLE",
-    "code": -8663,
+    "code": 8663,
     "description": "DB 테이블 변경에러",
-    "message_ko": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
+    "message": "DB 오류가 발생했습니다. 설정에서 저장소 위치를 확인해 주세요."
   },
   {
     "type": "ERROR_DIFFERENT_TIME",
-    "code": -8664,
+    "code": 8664,
     "description": "기기와 서버간의 시간이 일치하지 않습니다.",
-    "message_ko": "시스템시간이 정확하지 않습니다. 시간설정을 확인하세요."
+    "message": "시스템시간이 정확하지 않습니다. 시간설정을 확인하세요."
   },
   {
     "type": "ERROR_EMPTY_POSTER_UPLOAD_FILE_INFO",
-    "code": -8665,
+    "code": 8665,
     "description": "포스터 파일 업로드 후, 서버로 부터 응답은 받았지만 수신 데이타가 없는 경우",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_PARSE_POSTER_UPLOAD_FILE_INFO",
-    "code": -8666,
+    "code": 8666,
     "description": "포스터 파일 업로드 후, 서버로 부터 응답받은 데이타를 JSON 파싱 실패시",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_POSTER_URL",
-    "code": -8667,
+    "code": 8667,
     "description": "비디오 게이트웨이로 Media info 정보를 얻은 항목중에 poster url을 찾지 못함",
-    "message_ko": "업로드할 포스터 url이 없습니다."
+    "message": "업로드할 포스터 url이 없습니다."
   },
   {
     "type": "ERROR_GET_MEDIA_ID",
-    "code": -8668,
+    "code": 8668,
     "description": "엣지 서버로 부터 미디어 ID를 얻기 실패",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_SUBTITLE_FILENAME",
-    "code": -8669,
+    "code": 8669,
     "description": "비디오 게이트웨이로  Media info 정보를 얻은 항목중에 자막 url 문자열에서 파일명을 찾지 못함",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_EMPTY_PLAY_CALLBACK_INFO",
-    "code": -8670,
+    "code": 8670,
     "description": "Play 콜백 호출후 응답은 받았지만 수신 데이타가 없는 경우",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_DECRYPT_PLAY_CALLBACK_INFO",
-    "code": -8671,
+    "code": 8671,
     "description": "Play 콜백 호출후 응답받은 데이타를 복호화 실패시",
-    "message_ko": "컨텐츠 정보가 정확하지 않습니다."
+    "message": "컨텐츠 정보가 정확하지 않습니다."
   },
   {
     "type": "ERROR_PARSE_PLAY_CALLBACK_INFO",
-    "code": -8672,
+    "code": 8672,
     "description": "Play 콜백 호출후 응답받은 데이타를 JSON 파싱 실패시",
-    "message_ko": "컨텐츠 정보가 정확하지 않습니다."
+    "message": "컨텐츠 정보가 정확하지 않습니다."
   },
   {
     "type": "ERROR_ABNORMAL_PLAY_CALLBACK_INFO",
-    "code": -8673,
+    "code": 8673,
     "description": "Play 콜백 호출(Kind 1)하고 응답 받은 내용의 result 값이 0(에러)인 경우 (고객사에서 지정한 메시지가 노출될 수 있습니다.)",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_PLAY_CALLBACK_EXPIRED",
-    "code": -8674,
+    "code": 8674,
     "description": "Play 콜백 호출(Kind 3)하고 응답 받은 내용의 expire 값이 1인(강제만료) 경우",
-    "message_ko": "컨텐츠 사용이 제한되었습니다."
+    "message": "컨텐츠 사용이 제한되었습니다."
   },
   {
     "type": "ERROR_ABNORMAL_PLAY_CALLBACK_INFO_PLAY",
-    "code": -8675,
+    "code": 8675,
     "description": "Play 콜백 호출(Kind 3)하고 응답 받은 내용의 result 값이 0(에러)인 경우(고객사에서 지정한 메시지가 노출될 수 있습니다.)",
-    "message_ko": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
+    "message": "서버 오류가 발생했습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_ABNORMAL_UPLOAD_POSTER_INFO",
-    "code": -8676,
+    "code": 8676,
     "description": "poster 업로드 후 서버로 응답 받은 내용중 error 값이 ture인 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_GET_CONTENT_TYPE",
-    "code": -8677,
+    "code": 8677,
     "description": "엣지 서버로 부터 미디어 컨텐츠의 CONTENT-TYPE 정보 얻기 실패",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_GET_CONTENT_LAST_MODIFIED",
-    "code": -8678,
+    "code": 8678,
     "description": "엣지 서버로 부터 미디어 컨텐츠의 LAST-MODIFIED 정보 얻기 실패",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_ENCRYPT_KEY",
-    "code": -8679,
+    "code": 8679,
     "description": "DB에 저장하는 데이타를 암호화하는 객체 생성 실패시",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다."
-  },
-  {
-    "type": "",
-    "code": "",
-    "description": "",
-    "message_ko": "컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_FORCE_DELETE",
-    "code": -8680,
+    "code": 8680,
     "description": "DRM 콜백 호출후 응답으로 다운로드한 컨텐츠 삭제하라고 응답받은 경우",
-    "message_ko": "사용하실 수 없는 컨텐츠이므로 다운로드된 파일을 삭제합니다."
+    "message": "사용하실 수 없는 컨텐츠이므로 다운로드된 파일을 삭제합니다."
   },
   {
     "type": "ERROR_DIFFERENT_EXPIRE_RESET",
-    "code": -8681,
+    "code": 8681,
     "description": "DRM 콜백 호출후 응답으로 강제 리셋하라고 응답받았으나 호출시 전달할 session_key 값과 응답시 받은 session_key값이 다른 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_DRM_KIND",
-    "code": -8682,
+    "code": 8682,
     "description": "DRM 콜백 요청시 서버 전달한 항목에 대한 응답 정보를 받지 못한 경우",
-    "message_ko": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
+    "message": "인증 정보 확인 과정에서 오류가 발생하였습니다. 컨텐츠 제공업체 홈페이지 관리자에게 문의해주세요."
   },
   {
     "type": "ERROR_EXPIRATION_PLAY_TIME",
-    "code": -8683,
+    "code": 8683,
     "description": "DRM 다운로드 컨텐츠 재생 유효 재생시간을 모두 소진했을 경우",
-    "message_ko": "재생 유효 시간(%s)을 모두 소진했습니다. 삭제 후 다시 다운로드 해 주세요."
+    "message": "재생 유효 시간(%s)을 모두 소진했습니다. 삭제 후 다시 다운로드 해 주세요."
   },
   {
     "type": "ERROR_PLAY_CALLBACK_EXPIRATION_PLAY_TIME",
-    "code": -8686,
+    "code": 8686,
     "description": "Play Callback에서 전달받은 재생 유효시간이 만료된 경우(재생 종료 처리)",
-    "message_ko": "허용된 재생 시간이 초과되어 재생을 종료합니다."
+    "message": "허용된 재생 시간이 초과되어 재생을 종료합니다."
   },
   {
     "type": "ERROR_CHECK_EXPIRATION_DATE",
-    "code": -8687,
+    "code": 8687,
     "description": "DRM 다운로드 컨텐츠 재생 유효 재생시간을 소진하기전 네트워크 연결에서 중간에 체크 확인",
-    "message_ko": "재생 유효 시간 체크가 필요합니다. 네트워크 연결하여 재생해주세요."
+    "message": "재생 유효 시간 체크가 필요합니다. 네트워크 연결하여 재생해주세요."
   },
   {
     "type": "ERROR_NOT_FOUND_COMMON_INFO",
-    "code": -8800,
+    "code": 8800,
     "description": "컨텐츠 목록에서 공통 정보를 찾지 못함",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_NOT_FOUND_ITEM_IN_PLAYLIST",
-    "code": -8801,
+    "code": 8801,
     "description": "컨텐츠 목록에서 해당 항목을 찾지 못한 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_EMPTY_PLAYLIST_INFO",
-    "code": -8802,
+    "code": 8802,
     "description": "플래이 리스트 요청후 응답은 받았지만 수신 데이타가 없는 경우",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다."
   },
   {
     "type": "ERROR_INTRO_CANNOT_DOWNLOAD",
-    "code": -8803,
+    "code": 8803,
     "description": "인트로 컨텐츠는 다운로드 할 수 없음",
-    "message_ko": "인트로 영상은 다운로드 하실 수 없습니다."
+    "message": "인트로 영상은 다운로드 하실 수 없습니다."
   },
   {
     "type": "ERROR_DUPLICATION_NETWORK_ERR",
-    "code": -8804,
+    "code": 8804,
     "description": "중복차단 체크시 네트워크 불안전하여 실패 하는 경우",
-    "message_ko": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "서버와의 통신이 불안정 합니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_VIDEO_GATEWAY_ABNORMAL_RESPONSE",
-    "code": -8900,
+    "code": 8900,
     "description": "비디오 게이트웨이에 Media info를 요청했을 때 error값이 true인 경우 (정상 재생이 불가한 상황임)",
-    "message_ko": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
+    "message": "컨텐츠 정보 확인 과정에서 오류가 발생하였습니다. 잠시 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_COULDNT_RESOLVE_HOST",
-    "code": -9006,
+    "code": 9006,
     "description": "서버 HOST 리졸빙 실패시 발생",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_COULDNT_CONNECT",
-    "code": -9007,
+    "code": 9007,
     "description": "서버에 연결 실패시",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_PARTIAL_FILE",
-    "code": -9018,
+    "code": 9018,
     "description": "서버에 요청한 사이즈와 응답으로 받은 데이터의 사이즈가 상이한 경우",
-    "message_ko": "네트워크 환경이 불안정하여 데이터 수신에 실패하였습니다."
+    "message": "네트워크 환경이 불안정하여 데이터 수신에 실패하였습니다."
   },
   {
     "type": "ERROR_CURLE_OPERATION_TIMEDOUT",
-    "code": -9028,
+    "code": 9028,
     "description": "서버 연결중에 일정시간 동안 응답이 없는 경우",
-    "message_ko": "네트워크 상태 불안정으로 서버와의 통신이 정상 연결되지 못했습니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
+    "message": "네트워크 상태 불안정으로 서버와의 통신이 정상 연결되지 못했습니다. 네트워크 상태를 확인 후 다시 재생 시도해 주세요."
   },
   {
     "type": "ERROR_CURLE_RECV_ERROR",
-    "code": -9056,
+    "code": 9056,
     "description": "서버 연결하여 응닫을 받는 도중 실패시",
-    "message_ko": "네트워크 상태를 확인하신 후 재시도 해 주세요."
+    "message": "네트워크 상태를 확인하신 후 재시도 해 주세요."
   },
   {
     "type": "HTTP SEVER ERROR",
-    "code": "-94XX",
+    "code": "94XX",
     "description": "에러코드의 마지막 세자리수는 DRM Callback 서버에서 응답코드로 내려준 코드입니다.",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "HTTP SEVER ERROR",
-    "code": "-95XX",
+    "code": "95XX",
     "description": "에러코드의 마지막 세자리수는 DRM Callback 서버에서 응답코드로 내려준 코드입니다.",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "",
-    "code": "-90XX",
+    "code": "90XX",
     "description": "Curl Error",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "ERROR_CURLE_COULDNT_RESOLVE_HOST",
-    "code": -10006,
+    "code": 10006,
     "description": "서버 HOST 리졸빙 실패시 발생",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_COULDNT_CONNECT",
-    "code": -10007,
+    "code": 10007,
     "description": "서버에 연결 실패시",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_PARTIAL_FILE",
-    "code": -10018,
+    "code": 10018,
     "description": "서버에 요청한 사이즈와 응답으로 받은 데이터의 사이즈가 상이한 경우",
-    "message_ko": "네트워크 환경이 불안정하여 데이터 수신에 실패하였습니다."
+    "message": "네트워크 환경이 불안정하여 데이터 수신에 실패하였습니다."
   },
   {
     "type": "ERROR_CURLE_OPERATION_TIMEDOUT",
-    "code": -10028,
+    "code": 10028,
     "description": "서버 연결중에 일정시간 동안 응답이 없는 경우",
-    "message_ko": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
+    "message": "서버에 연결할 수 없습니다. 네트워크를 확인 후 재시도 해 주세요."
   },
   {
     "type": "ERROR_CURLE_RECV_ERROR",
-    "code": -10056,
+    "code": 10056,
     "description": "서버 연결하여 응닫을 받는 도중 실패시",
-    "message_ko": "네트워크 상태를 확인하신 후 재시도 해 주세요."
+    "message": "네트워크 상태를 확인하신 후 재시도 해 주세요."
   },
   {
     "type": "HTTP SERVER ERROR",
-    "code": "-104XX",
+    "code": "104XX",
     "description": "에러코드의 마지막 세자리수는 Play Callback 서버에서 응답코드로 내려준 코드입니다.",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "",
-    "code": "-105XX",
+    "code": "105XX",
     "description": "",
-    "message_ko": ""
+    "message": ""
   },
   {
     "type": "",
-    "code": "-100XX",
+    "code": "100XX",
     "description": "Curl Error",
-    "message_ko": ""
+    "message": ""
   }
 ]

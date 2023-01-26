@@ -48,6 +48,8 @@ const PlayerView = (props) => {
   useEffect(() => {
     updateInfo("load", true);
     generateVodSrc();
+
+    return () => {}
   }, []);
 
   return (
