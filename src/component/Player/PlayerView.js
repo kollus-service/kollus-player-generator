@@ -30,8 +30,13 @@ const PlayerView = (props) => {
       target_window: document.getElementById("kollus-player").contentWindow,
     });
 
+    const timer = setTimeout(() => {
+      setError(true);
+    }, 5 * 1000);
+
     controller.on("ready", () => {
       setLoad(false);
+      clearTimeout(timer);
       updateInfo("status", "success");
       updateInfo("errorCode", null);
     });
@@ -42,7 +47,7 @@ const PlayerView = (props) => {
       updateInfo("status", "error");
       updateInfo("errorCode", Math.abs(code));
     });
-  }, []);
+  }, [load]);
 
   useEffect(() => {
     setLoad(true);
@@ -94,6 +99,12 @@ const PlayerView = (props) => {
             >
               {errorList[info.errorCode].desc}
             </Button>
+          )}
+
+          {error === true && (
+            <pre>
+              {"에러로 인해 플레이어 로딩이 되지 않았습니다.\n해당 메일로 문의 부탁드립니다.\ntech_support@catenoid.net"}
+            </pre>
           )}
         </Stack>
       </Alert>
