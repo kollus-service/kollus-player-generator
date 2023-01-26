@@ -20,6 +20,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import useInfoStore from "../../../store/info";
+import useErrorCodeStore from "../../../store/error";
 
 export default function VodPanel() {
   const {
@@ -32,6 +33,8 @@ export default function VodPanel() {
     setVodInfo,
     generateVodSrc,
   } = useInfoStore();
+  const { load, setLoad, setError } = useErrorCodeStore();
+
   const [contentLink, setContentLink] = useState();
   const [iframe, setIframe] = useState("");
 
@@ -90,6 +93,8 @@ export default function VodPanel() {
 
     setVodInfo(newInfo);
     generateVodSrc();
+    setLoad(true);
+    setError(false);
   };
 
   const preventHandler = (event) => {

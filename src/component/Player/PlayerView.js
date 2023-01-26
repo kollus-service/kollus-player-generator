@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
@@ -9,10 +9,9 @@ import useErrorCodeStore from "../../store/error";
 
 const PlayerView = (props) => {
   const { src, generateVodSrc } = useInfoStore();
-  const { errorList } = useErrorCodeStore();
+  const { load, setLoad, error, setError, errorList } = useErrorCodeStore();
 
   const [info, setInfo] = useState({
-    load: true,
     status: "success",
     errorCode: null,
   });
@@ -26,13 +25,13 @@ const PlayerView = (props) => {
     });
   };
 
-  const errorHandler = () => {
+  const errorHandler = useCallback(() => {
     let controller = new VgControllerClient({
       target_window: document.getElementById("kollus-player").contentWindow,
     });
 
     controller.on("ready", () => {
-      updateInfo("load", false);
+      setLoad(false);
       updateInfo("status", "success");
       updateInfo("errorCode", null);
     });
@@ -43,10 +42,10 @@ const PlayerView = (props) => {
       updateInfo("status", "error");
       updateInfo("errorCode", Math.abs(code));
     });
-  };
+  }, []);
 
   useEffect(() => {
-    updateInfo("load", true);
+    setLoad(true);
     generateVodSrc();
 
     return () => {}
@@ -68,7 +67,7 @@ const PlayerView = (props) => {
         allow="encrypted-media"
       ></iframe>
       <Alert
-        severity={info.load === true ? "info" : info.status}
+        severity={load === true ? "info" : info.status}
         sx={{
           "& .MuiAlert-message": {
             width: "100%",
@@ -77,24 +76,23 @@ const PlayerView = (props) => {
       >
         <Stack spacing={2} justifyContent="space-between">
           <AlertTitle>
-            {info.load === true
+            {load === true
               ? "Check..."
               : info.status.charAt(0).toUpperCase() + info.status.slice(1)}
           </AlertTitle>
 
-          {info.load === false && errorList[info.errorCode] && (
+          {load === false && errorList[info.errorCode] && (
             <pre>{errorList[info.errorCode].msg}</pre>
           )}
 
-          {info.load === false && errorList[info.errorCode] && (
+          {load === false && errorList[info.errorCode] && (
             <Button
               target="_blank"
-              href={errorList[info.errorCode].url}
               variant="contained"
               color="warning"
               sx={{ margin: "0 2px", padding: "0 4px", width: "100%" }}
             >
-              해결방법 자세히 보기
+              {errorList[info.errorCode].desc}
             </Button>
           )}
         </Stack>
