@@ -103,14 +103,17 @@ const PlayerView = (props) => {
 
           {error === true && (
             <pre>
-              {```
-              에러로 인해 플레이어 로딩이 되지 않았습니다. \n
-              화면의 에러코드는 아래의 페이지에서 검색이 가능합니다. \n
-              https://catenoid-wiki.atlassian.net/wiki/spaces/SUP/pages/2720559 \n\n
-
-              추가사항은 해당 메일로 문의 부탁드립니다. \n
-              tech_support@catenoid.net
-              ```}
+              {
+              "에러로 인해 플레이어 로딩이 되지 않았습니다. \n"+
+              "화면의 에러코드는 "}
+              <Link color="inherit" href="https://catenoid-wiki.atlassian.net/wiki/spaces/SUP/pages/2720559" target="_blank">
+                해당 페이지
+              </Link>
+              {
+              "에서 검색이 가능합니다. \n\n"+
+              "추가사항은 메일로 문의 부탁드립니다. \n"+
+              "tech_support@catenoid.net"
+              }
             </pre>
           )}
         </Stack>
