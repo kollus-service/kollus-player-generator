@@ -108,7 +108,7 @@ const PlayerView = (props) => {
               화면의 에러코드는 아래의 페이지에서 검색이 가능합니다. \n
               https://catenoid-wiki.atlassian.net/wiki/spaces/SUP/pages/2720559 \n\n
 
-              해당 메일로 문의 부탁드립니다. \n
+              추가사항은 해당 메일로 문의 부탁드립니다. \n
               tech_support@catenoid.net
               ```}
             </pre>
