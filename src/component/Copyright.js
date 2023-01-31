@@ -12,6 +12,10 @@ export default function Copyright(props) {
       maxWidth={props.maxWidth}
       sx={{ my: 10 }}
     >
+      <Link color="inherit" href="https://github.com/kollus-service/kollus-player-generator" target="_blank">
+        Github Repository
+      </Link>
+      <br/>
       {"Copyright © "}
       <Link color="inherit" href="https://www.catenoid.net" target="_blank">
         Catenoid
