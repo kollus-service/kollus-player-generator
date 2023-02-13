@@ -29,14 +29,14 @@ const useInfoStore = create((set, get) => ({
   setMultiDrmOption: (props) =>
     set((prevState) => {
       return {
-        multiDrmOption: !prevState.multiDrmOption,
+        multiDrmOption: props,
       };
     }),
   advancedOption: false,
   setAdvancedOption: (props) =>
     set((prevState) => {
       return {
-        advancedOption: !prevState.advancedOption,
+        advancedOption: props,
       };
     }),
   setVodInfo: (props) =>

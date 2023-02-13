@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -135,16 +135,15 @@ export default function VodPanel() {
     setContentLink(contentLink);
   };
 
+  const multiDrmOptionRef = useRef();
+  
   const toggleMultiDRMOption = () => {
-    setMultiDrmOption((prevState) => {
-      return !prevState;
-    });
+    setMultiDrmOption(multiDrmOptionRef.current.checked);
   };
-
+  const advancedOptionRef = useRef();
+  
   const toggleAdvancedOption = () => {
-    setAdvancedOption((prevState) => {
-      return !prevState;
-    });
+    setAdvancedOption(advancedOptionRef.current.checked);
   };
 
   const initialIframe = (src) => {
@@ -300,11 +299,11 @@ export default function VodPanel() {
               Query String 도 추가?
             */}
             <FormControlLabel
-              control={<Checkbox onChange={toggleMultiDRMOption} />}
+              control={<Checkbox onChange={toggleMultiDRMOption} inputRef={multiDrmOptionRef} />}
               label="MultiDRM 적용"
             />
             <FormControlLabel
-              control={<Checkbox onChange={toggleAdvancedOption} />}
+              control={<Checkbox onChange={toggleAdvancedOption} inputRef={advancedOptionRef} />}
               label="payload 적용"
             />
             <TextareaAutosize
