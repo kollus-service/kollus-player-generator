@@ -15,6 +15,10 @@ export default function Copyright(props) {
       <Link color="inherit" href="https://github.com/kollus-service/kollus-player-generator" target="_blank">
         Github Repository
       </Link>
+      {" / "}
+      <Link color="inherit" href="https://catenoid-wiki.atlassian.net/wiki/spaces/SUP/pages/2720559" target="_blank">
+        Error Code
+      </Link>
       <br/>
       {"Copyright © "}
       <Link color="inherit" href="https://www.catenoid.net" target="_blank">
